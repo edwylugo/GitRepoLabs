@@ -83,13 +83,7 @@ extension HomeRepoController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(cellClass: ListRepoTableViewCell.self, indexPath: indexPath)
-        cell.configure(
-            content: ListRepoTableViewCell.Configuration(
-                cardRepoView: CardRepoView.Configuration(
-                    titleAndBodyView: viewModel.setTitleAndBodyView()
-                )
-            )
-        )
+        cell.configure(content: ListRepoTableViewCell.Configuration(cardRepoView: viewModel.setCardRepoView()))
         return cell
     }
     

@@ -12,7 +12,7 @@ class ListRepoTableViewCell: UITableViewCell {
     
     // MARK: - Properties
     
-    let cardRepoView = CardRepoView(translateMask: false)
+    private let cardRepoView = CardRepoView(translateMask: false)
     
     // MARK: - LifeCycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
