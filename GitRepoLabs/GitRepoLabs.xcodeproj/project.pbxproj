@@ -123,10 +123,10 @@
 			children = (
 				59F360EF2C5F01A8001E6FF5 /* API */,
 				59F360F02C5F01B0001E6FF5 /* DesignSystem */,
-				59F360EE2C5F01A2001E6FF5 /* Utils */,
 				59F360EB2C5F0192001E6FF5 /* Coordinator */,
 				59F360ED2C5F0199001E6FF5 /* Delegates */,
 				59F360EC2C5F0196001E6FF5 /* Resources */,
+				59F360EE2C5F01A2001E6FF5 /* Utils */,
 				59F360EA2C5F018F001E6FF5 /* Scenes */,
 			);
 			path = GitRepoLabs;

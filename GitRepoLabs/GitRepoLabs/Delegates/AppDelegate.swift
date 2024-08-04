@@ -11,6 +11,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var coordinator: Coordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -38,6 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navController
         window?.overrideUserInterfaceStyle = .light
         window?.makeKeyAndVisible()
+        
+        coordinator = HomeRepoCoordinator.init(navController)
+        coordinator?.start()
         
         return true
     }

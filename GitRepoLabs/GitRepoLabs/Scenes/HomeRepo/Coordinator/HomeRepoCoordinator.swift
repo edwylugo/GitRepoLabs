@@ -38,5 +38,8 @@ class HomeRepoCoordinator: HomeRepoCoordinatorProtocol {
 
 // MARK: - HomeRepoNavigationProtocol
 extension HomeRepoCoordinator: HomeRepoNavigationProtocol {
-    
+    func shouldDetailsRepo() {
+        let coordinator = DetailsRepoCoordinator(navigationController)
+        coordinator.start()
+    }
 }

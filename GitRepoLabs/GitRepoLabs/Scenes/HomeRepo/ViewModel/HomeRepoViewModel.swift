@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - HomeRepoNavigationProtocol - Use in Coordinator
 protocol HomeRepoNavigationProtocol: AnyObject {
-
+    func shouldDetailsRepo()
 }
 
 // MARK: - ViewModelProtocol - Protocol definition Use in Controller

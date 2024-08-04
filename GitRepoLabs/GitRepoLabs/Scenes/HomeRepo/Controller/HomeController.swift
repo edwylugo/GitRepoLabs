@@ -39,5 +39,6 @@ extension HomeRepoController: CodeView {
     }
     
     func setupAdditionalConfiguration() {
+        view.backgroundColor = .systemBlue
     }
 }
