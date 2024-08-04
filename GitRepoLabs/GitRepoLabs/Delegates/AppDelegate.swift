@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navController: UINavigationController = .init()
         navController.modalPresentationStyle = .fullScreen
         navController.navigationItem.hidesBackButton = true
+        navController.setNavigationBarHidden(true, animated: true)
         
         window?.rootViewController = navController
         window?.overrideUserInterfaceStyle = .light
