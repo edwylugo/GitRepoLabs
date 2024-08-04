@@ -57,11 +57,11 @@ extension ProfileUserRepoView: CodeView {
         profileImageView.contentMode = .scaleAspectFit
         usernameLabel.font = UIFont.boldSystemFont(ofSize: 14)
         usernameLabel.textColor = .systemBlue
-        usernameLabel.numberOfLines = .zero
+        usernameLabel.numberOfLines = 1
         usernameLabel.textAlignment = .center
         nameLabel.font = UIFont.systemFont(ofSize: 10)
         nameLabel.textColor = .systemGray
-        nameLabel.numberOfLines = .zero
+        nameLabel.numberOfLines = 1
         nameLabel.textAlignment = .center
     }
 }

@@ -63,18 +63,18 @@ extension CardRepoView: CodeView {
     
     func setupConstraints() {
         stackMainView.anchor(top: topAnchor,
-                         leading: leadingAnchor,
-                         bottom: bottomAnchor,
-                         trailing: trailingAnchor)
+                             leading: leadingAnchor,
+                             bottom: bottomAnchor,
+                             trailing: trailingAnchor)
         
         stackNumbers.anchor(top: containerNumbers.topAnchor,
                             leading: containerNumbers.leadingAnchor,
                             bottom: containerNumbers.bottomAnchor)
         
-        containerProfile.setWidth(width: 80)
+        containerProfile.setWidth(width: 100)
         profileUserRepoView.centerX(inView: containerProfile)
-        profileUserRepoView.centerY(inView: containerProfile)
-        profileUserRepoView.anchor(leading: containerProfile.leadingAnchor,
+        profileUserRepoView.anchor(top: containerProfile.topAnchor,
+                                   leading: containerProfile.leadingAnchor,
                                    trailing: containerProfile.trailingAnchor)
     }
 }
