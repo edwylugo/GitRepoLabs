@@ -11,19 +11,19 @@ class TitleAndBodyView: UIView {
     
     // MARK: - Properties
     
-    let stackView = UIStackView(translateMask: false).apply {
+    private let stackView = UIStackView(translateMask: false).apply {
         $0.axis = .vertical
         $0.spacing = 4
         $0.distribution = .fill
     }
     
-    let titleLabel = UILabel(translateMask: false).apply {
+    private let titleLabel = UILabel(translateMask: false).apply {
         $0.font = UIFont.boldSystemFont(ofSize: 16)
         $0.textColor = .systemBlue
         $0.numberOfLines = .zero
     }
     
-    let bodyLabel = UILabel(translateMask: false).apply {
+    private let bodyLabel = UILabel(translateMask: false).apply {
         $0.font = UIFont.systemFont(ofSize: 14)
         $0.textColor = .black
         $0.numberOfLines = .zero

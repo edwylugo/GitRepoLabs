@@ -29,6 +29,8 @@
 		59F361172C5F0F5E001E6FF5 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361162C5F0F5E001E6FF5 /* ViewModelProtocol.swift */; };
 		59F3611A2C5F1216001E6FF5 /* TitleAndBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361192C5F1216001E6FF5 /* TitleAndBodyView.swift */; };
 		59F3611C2C5F1C91001E6FF5 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F3611B2C5F1C91001E6FF5 /* UITableViewExtension.swift */; };
+		59F3611F2C5F1E45001E6FF5 /* ListRepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F3611E2C5F1E45001E6FF5 /* ListRepoTableViewCell.swift */; };
+		59F361212C5F2266001E6FF5 /* CardRepoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361202C5F2266001E6FF5 /* CardRepoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		59F361162C5F0F5E001E6FF5 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		59F361192C5F1216001E6FF5 /* TitleAndBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndBodyView.swift; sourceTree = "<group>"; };
 		59F3611B2C5F1C91001E6FF5 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		59F3611E2C5F1E45001E6FF5 /* ListRepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRepoTableViewCell.swift; sourceTree = "<group>"; };
+		59F361202C5F2266001E6FF5 /* CardRepoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRepoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,9 +301,19 @@
 		59F361182C5F11E8001E6FF5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				59F3611D2C5F1D24001E6FF5 /* Cells */,
+				59F361202C5F2266001E6FF5 /* CardRepoView.swift */,
 				59F361192C5F1216001E6FF5 /* TitleAndBodyView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		59F3611D2C5F1D24001E6FF5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				59F3611E2C5F1E45001E6FF5 /* ListRepoTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,7 +460,9 @@
 				59F3610B2C5F09FC001E6FF5 /* Apply.swift in Sources */,
 				59F361152C5F0F3B001E6FF5 /* Observable.swift in Sources */,
 				59F361172C5F0F5E001E6FF5 /* ViewModelProtocol.swift in Sources */,
+				59F361212C5F2266001E6FF5 /* CardRepoView.swift in Sources */,
 				59F361072C5F0970001E6FF5 /* DetailsRepoViewModel.swift in Sources */,
+				59F3611F2C5F1E45001E6FF5 /* ListRepoTableViewCell.swift in Sources */,
 				59F360F32C5F03B8001E6FF5 /* CoordinatorProtocol.swift in Sources */,
 				59F360FD2C5F08A4001E6FF5 /* HomeRepoCoordinator.swift in Sources */,
 			);

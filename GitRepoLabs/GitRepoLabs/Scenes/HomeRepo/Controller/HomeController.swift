@@ -35,7 +35,26 @@ class HomeRepoController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+        registerCells()
+        setupDelegates()
+        setupBindigs()
     }
+    
+    // MARK: - Methods
+    
+    func registerCells() {
+        listRepoTableView.register(cellClass: ListRepoTableViewCell.self)
+    }
+    
+    func setupDelegates() {
+        listRepoTableView.delegate = self
+        listRepoTableView.dataSource = self
+    }
+    
+    func setupBindigs() {
+        listRepoTableView.reloadData()
+    }
+    
 }
 
 // MARK: - CodeView
@@ -45,13 +64,36 @@ extension HomeRepoController: CodeView {
     }
     
     func setupConstraints() {
-        listRepoTableView.anchor(top: view.safeAreaLayoutGuide.topAnchor,
-                                 leading: view.leadingAnchor,
-                                 bottom: view.bottomAnchor,
-                                 trailing: view.trailingAnchor)
+        listRepoTableView.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 16,
+                                 leading: view.leadingAnchor, paddingLeft: 16,
+                                 bottom: view.bottomAnchor, paddingBottom: 16,
+                                 trailing: view.trailingAnchor, paddingRight: 16)
     }
     
     func setupAdditionalConfiguration() {
         view.backgroundColor = .white
+    }
+}
+
+// MARK: - UITableViewDelegate, UITableViewDataSource
+extension HomeRepoController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeue(cellClass: ListRepoTableViewCell.self, indexPath: indexPath)
+        cell.configure(
+            content: ListRepoTableViewCell.Configuration(
+                cardRepoView: CardRepoView.Configuration(
+                    titleAndBodyView: viewModel.setTitleAndBodyView()
+                )
+            )
+        )
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
     }
 }
