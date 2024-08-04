@@ -23,6 +23,8 @@
 		59F3610B2C5F09FC001E6FF5 /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F3610A2C5F09FC001E6FF5 /* Apply.swift */; };
 		59F3610D2C5F0A36001E6FF5 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F3610C2C5F0A36001E6FF5 /* CodeView.swift */; };
 		59F3610F2C5F0AFC001E6FF5 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F3610E2C5F0AFC001E6FF5 /* Configurable.swift */; };
+		59F361112C5F0BEC001E6FF5 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361102C5F0BEC001E6FF5 /* UIViewExtension.swift */; };
+		59F361132C5F0C7F001E6FF5 /* UIStackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361122C5F0C7F001E6FF5 /* UIStackViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		59F3610A2C5F09FC001E6FF5 /* Apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apply.swift; sourceTree = "<group>"; };
 		59F3610C2C5F0A36001E6FF5 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		59F3610E2C5F0AFC001E6FF5 /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
+		59F361102C5F0BEC001E6FF5 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		59F361122C5F0C7F001E6FF5 /* UIStackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +208,8 @@
 		59F360F12C5F01C0001E6FF5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				59F361102C5F0BEC001E6FF5 /* UIViewExtension.swift */,
+				59F361122C5F0C7F001E6FF5 /* UIStackViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -412,7 +418,9 @@
 				59F3610D2C5F0A36001E6FF5 /* CodeView.swift in Sources */,
 				59F361052C5F0968001E6FF5 /* DetailsRepoCoordinator.swift in Sources */,
 				59F3610F2C5F0AFC001E6FF5 /* Configurable.swift in Sources */,
+				59F361112C5F0BEC001E6FF5 /* UIViewExtension.swift in Sources */,
 				59F361092C5F0979001E6FF5 /* DetailsRepoController.swift in Sources */,
+				59F361132C5F0C7F001E6FF5 /* UIStackViewExtension.swift in Sources */,
 				59F3610B2C5F09FC001E6FF5 /* Apply.swift in Sources */,
 				59F361072C5F0970001E6FF5 /* DetailsRepoViewModel.swift in Sources */,
 				59F360F32C5F03B8001E6FF5 /* CoordinatorProtocol.swift in Sources */,
