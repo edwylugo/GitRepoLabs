@@ -24,3 +24,7 @@ extension Apply where Self: Any {
         return self
     }
 }
+
+extension NSObject: Apply {}
+extension JSONDecoder: Apply {}
+extension JSONEncoder: Apply {}

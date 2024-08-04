@@ -27,6 +27,8 @@
 		59F361132C5F0C7F001E6FF5 /* UIStackViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361122C5F0C7F001E6FF5 /* UIStackViewExtension.swift */; };
 		59F361152C5F0F3B001E6FF5 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361142C5F0F3B001E6FF5 /* Observable.swift */; };
 		59F361172C5F0F5E001E6FF5 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361162C5F0F5E001E6FF5 /* ViewModelProtocol.swift */; };
+		59F3611A2C5F1216001E6FF5 /* TitleAndBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361192C5F1216001E6FF5 /* TitleAndBodyView.swift */; };
+		59F3611C2C5F1C91001E6FF5 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F3611B2C5F1C91001E6FF5 /* UITableViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		59F361122C5F0C7F001E6FF5 /* UIStackViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtension.swift; sourceTree = "<group>"; };
 		59F361142C5F0F3B001E6FF5 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		59F361162C5F0F5E001E6FF5 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		59F361192C5F1216001E6FF5 /* TitleAndBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleAndBodyView.swift; sourceTree = "<group>"; };
+		59F3611B2C5F1C91001E6FF5 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +210,7 @@
 		59F360F02C5F01B0001E6FF5 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				59F361182C5F11E8001E6FF5 /* Views */,
 				59F360F12C5F01C0001E6FF5 /* Extensions */,
 			);
 			path = DesignSystem;
@@ -216,6 +221,7 @@
 			children = (
 				59F361102C5F0BEC001E6FF5 /* UIViewExtension.swift */,
 				59F361122C5F0C7F001E6FF5 /* UIStackViewExtension.swift */,
+				59F3611B2C5F1C91001E6FF5 /* UITableViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -286,6 +292,14 @@
 				59F361042C5F0968001E6FF5 /* DetailsRepoCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		59F361182C5F11E8001E6FF5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				59F361192C5F1216001E6FF5 /* TitleAndBodyView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,12 +433,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				59F361012C5F08C1001E6FF5 /* HomeRepoViewModel.swift in Sources */,
+				59F3611A2C5F1216001E6FF5 /* TitleAndBodyView.swift in Sources */,
 				59F361032C5F08E0001E6FF5 /* HomeController.swift in Sources */,
 				59F360BB2C5F009E001E6FF5 /* AppDelegate.swift in Sources */,
 				59F3610D2C5F0A36001E6FF5 /* CodeView.swift in Sources */,
 				59F361052C5F0968001E6FF5 /* DetailsRepoCoordinator.swift in Sources */,
 				59F3610F2C5F0AFC001E6FF5 /* Configurable.swift in Sources */,
 				59F361112C5F0BEC001E6FF5 /* UIViewExtension.swift in Sources */,
+				59F3611C2C5F1C91001E6FF5 /* UITableViewExtension.swift in Sources */,
 				59F361092C5F0979001E6FF5 /* DetailsRepoController.swift in Sources */,
 				59F361132C5F0C7F001E6FF5 /* UIStackViewExtension.swift in Sources */,
 				59F3610B2C5F09FC001E6FF5 /* Apply.swift in Sources */,

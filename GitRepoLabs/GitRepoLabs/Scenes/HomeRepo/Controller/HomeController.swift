@@ -10,6 +10,14 @@ import UIKit
 class HomeRepoController: UIViewController {
     
     // MARK: - Properties
+    private let listRepoTableView = UITableView(translateMask: false).apply {
+        $0.separatorStyle = .singleLine
+        $0.backgroundColor = .clear
+        $0.allowsSelection = true
+        $0.bounces = true
+        $0.isUserInteractionEnabled = true
+    }
+    
     private var viewModel: HomeRepoViewModelProtocol
     
     // MARK: - LifeCycle
@@ -33,12 +41,17 @@ class HomeRepoController: UIViewController {
 // MARK: - CodeView
 extension HomeRepoController: CodeView {
     func buildViewHierarchy() {
+        view.addSubview(listRepoTableView)
     }
     
     func setupConstraints() {
+        listRepoTableView.anchor(top: view.safeAreaLayoutGuide.topAnchor,
+                                 leading: view.leadingAnchor,
+                                 bottom: view.bottomAnchor,
+                                 trailing: view.trailingAnchor)
     }
     
     func setupAdditionalConfiguration() {
-        view.backgroundColor = .systemBlue
+        view.backgroundColor = .white
     }
 }
