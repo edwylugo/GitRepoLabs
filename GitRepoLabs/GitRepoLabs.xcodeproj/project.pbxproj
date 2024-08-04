@@ -22,6 +22,7 @@
 		59F361092C5F0979001E6FF5 /* DetailsRepoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361082C5F0979001E6FF5 /* DetailsRepoController.swift */; };
 		59F3610B2C5F09FC001E6FF5 /* Apply.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F3610A2C5F09FC001E6FF5 /* Apply.swift */; };
 		59F3610D2C5F0A36001E6FF5 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F3610C2C5F0A36001E6FF5 /* CodeView.swift */; };
+		59F3610F2C5F0AFC001E6FF5 /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F3610E2C5F0AFC001E6FF5 /* Configurable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		59F361082C5F0979001E6FF5 /* DetailsRepoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRepoController.swift; sourceTree = "<group>"; };
 		59F3610A2C5F09FC001E6FF5 /* Apply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apply.swift; sourceTree = "<group>"; };
 		59F3610C2C5F0A36001E6FF5 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		59F3610E2C5F0AFC001E6FF5 /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 			children = (
 				59F3610A2C5F09FC001E6FF5 /* Apply.swift */,
 				59F3610C2C5F0A36001E6FF5 /* CodeView.swift */,
+				59F3610E2C5F0AFC001E6FF5 /* Configurable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				59F360BB2C5F009E001E6FF5 /* AppDelegate.swift in Sources */,
 				59F3610D2C5F0A36001E6FF5 /* CodeView.swift in Sources */,
 				59F361052C5F0968001E6FF5 /* DetailsRepoCoordinator.swift in Sources */,
+				59F3610F2C5F0AFC001E6FF5 /* Configurable.swift in Sources */,
 				59F361092C5F0979001E6FF5 /* DetailsRepoController.swift in Sources */,
 				59F3610B2C5F09FC001E6FF5 /* Apply.swift in Sources */,
 				59F361072C5F0970001E6FF5 /* DetailsRepoViewModel.swift in Sources */,
