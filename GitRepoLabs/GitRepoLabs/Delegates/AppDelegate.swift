@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow.init(frame: UIScreen.main.bounds)
 
-        let navController = UINavigationController(rootViewController: ViewController())
+        let navController: UINavigationController = .init()
         navController.modalPresentationStyle = .fullScreen
         navController.navigationItem.hidesBackButton = true
         
