@@ -17,6 +17,8 @@ protocol DetailsRepoNavigationProtocol: AnyObject {
 protocol DetailsRepoViewModelProtocol: ViewModelProtocol {
     var isLoading: Observable<Bool> { get }
     var isError: Observable<String?> { get }
+    func setCardPullRequestView() -> CardPullRequestView.Configuration
+    func setHeaderPullsView() -> HeaderPullsView.Configuration
 }
 
 // MARK: - DetailsRepoViewModelProtocol
@@ -30,5 +32,24 @@ class DetailsRepoViewModel: DetailsRepoViewModelProtocol {
         self.navigationDelegate = navigationDelegate
         self.isLoading = Observable(false)
         self.isError = Observable("")
+    }
+    
+    func setCardPullRequestView() -> CardPullRequestView.Configuration {
+        return CardPullRequestView.Configuration(
+            titleAndBodyView: TitleAndBodyView.Configuration(
+                textTitle: "Título do pull request",
+                textBody: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "),
+            profileUserPullRequestView: ProfileUserPullRequestView.Configuration(
+                profileIcon: Images.Icons.ic_profile,
+                userNameText: "username",
+                nameText: "Nome Sobrenome")
+        )
+    }
+    
+    func setHeaderPullsView() -> HeaderPullsView.Configuration {
+        return HeaderPullsView.Configuration(
+            openedText: "16",
+            closedText: "800"
+        )
     }
 }

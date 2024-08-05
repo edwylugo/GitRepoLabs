@@ -1,16 +1,20 @@
 //
-//  ProfileUserRepoView.swift
+//  ProfileUserPullRequestView.swift
 //  GitRepoLabs
 //
-//  Created by Edwy Lugo on 04/08/24.
+//  Created by Edwy Lugo on 05/08/24.
 //
 
 import UIKit
 
-class ProfileUserRepoView: UIView {
+class ProfileUserPullRequestView: UIView {
     
     // MARK: - Properties
     private let profileImageView = UIImageView(translateMask: false)
+    private let stackUserView = UIStackView(translateMask: false).apply {
+        $0.axis = .vertical
+        $0.distribution = .fill
+    }
     private let usernameLabel = UILabel(translateMask: false)
     private let nameLabel = UILabel(translateMask: false)
     
@@ -27,49 +31,44 @@ class ProfileUserRepoView: UIView {
 }
 
 // MARK: - CodeView
-extension ProfileUserRepoView: CodeView {
+extension ProfileUserPullRequestView: CodeView {
     
     func buildViewHierarchy() {
         addSubview(profileImageView)
-        addSubview(usernameLabel)
-        addSubview(nameLabel)
+        addSubview(stackUserView)
+        stackUserView.addArrangedSubviews([usernameLabel, nameLabel])
     }
     
     func setupConstraints() {
         profileImageView.anchor(top: topAnchor,
                                 leading: leadingAnchor,
-                                trailing: trailingAnchor)
+                                bottom: bottomAnchor)
         
-        usernameLabel.anchor(top: profileImageView.bottomAnchor, paddingTop: 4,
-                             leading: leadingAnchor,
+        stackUserView.centerY(inView: profileImageView)
+        stackUserView.anchor(leading: profileImageView.trailingAnchor,
+                             paddingLeft: 8,
                              trailing: trailingAnchor)
-        
-        nameLabel.anchor(top: usernameLabel.bottomAnchor, paddingTop: 4,
-                         leading: leadingAnchor,
-                         bottom: bottomAnchor,
-                         trailing: trailingAnchor)
-        
     }
     
     func setupAdditionalConfiguration() {
-        profileImageView.setHeight(height: 48)
+        profileImageView.setDimensions(width: 36, height: 36)
         profileImageView.contentMode = .scaleAspectFit
         usernameLabel.font = UIFont.boldSystemFont(ofSize: 14)
         usernameLabel.textColor = .systemBlue
         usernameLabel.numberOfLines = 1
-        usernameLabel.textAlignment = .center
+        usernameLabel.textAlignment = .left
         nameLabel.font = UIFont.systemFont(ofSize: 10)
         nameLabel.textColor = .systemGray
         nameLabel.numberOfLines = 1
-        nameLabel.textAlignment = .center
+        nameLabel.textAlignment = .left
     }
 }
 
 // MARK: - Configurable -> Populate Data ViewModel
-extension ProfileUserRepoView: Configurable {
-    typealias Configuration = ProfileUserRepoViewContent
+extension ProfileUserPullRequestView: Configurable {
+    typealias Configuration = ProfileUserPullRequestViewContent
     
-    struct ProfileUserRepoViewContent {
+    struct ProfileUserPullRequestViewContent {
         let profileIcon: UIImage
         let userNameText: String
         let nameText: String
@@ -81,7 +80,7 @@ extension ProfileUserRepoView: Configurable {
         }
     }
     
-    func configure(content: ProfileUserRepoViewContent) {
+    func configure(content: ProfileUserPullRequestViewContent) {
         profileImageView.image = content.profileIcon
         usernameLabel.text = content.userNameText
         nameLabel.text = content.nameText

@@ -18,6 +18,7 @@ protocol HomeRepoViewModelProtocol: ViewModelProtocol {
     var isLoading: Observable<Bool> { get }
     var isError: Observable<String?> { get }
     func setCardRepoView() -> CardRepoView.Configuration
+    func shouldDetailsRepo()
 }
 
 // MARK: - HomeRepoViewModelProtocol
@@ -49,5 +50,9 @@ class HomeRepoViewModel: HomeRepoViewModelProtocol {
                 userNameText: "username",
                 nameText: "Nome Sobrenome")
         )
+    }
+    
+    func shouldDetailsRepo() {
+        navigationDelegate.shouldDetailsRepo()
     }
 }

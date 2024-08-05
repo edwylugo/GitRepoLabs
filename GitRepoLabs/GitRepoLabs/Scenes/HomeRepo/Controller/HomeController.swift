@@ -11,8 +11,8 @@ class HomeRepoController: UIViewController {
     
     // MARK: - Properties
     private let listRepoTableView = UITableView(translateMask: false).apply {
-        $0.separatorStyle = .singleLine
-        $0.backgroundColor = .clear
+        $0.separatorStyle = .none
+        $0.backgroundColor = .white
         $0.allowsSelection = true
         $0.bounces = true
         $0.isUserInteractionEnabled = true
@@ -43,7 +43,7 @@ class HomeRepoController: UIViewController {
     // MARK: - Methods
     
     func registerCells() {
-        listRepoTableView.register(cellClass: ListRepoTableViewCell.self)
+        listRepoTableView.register(cellClass: ItemListRepoTableViewCell.self)
     }
     
     func setupDelegates() {
@@ -65,9 +65,9 @@ extension HomeRepoController: CodeView {
     
     func setupConstraints() {
         listRepoTableView.anchor(top: view.safeAreaLayoutGuide.topAnchor, paddingTop: 16,
-                                 leading: view.leadingAnchor, paddingLeft: 16,
-                                 bottom: view.bottomAnchor, paddingBottom: 16,
-                                 trailing: view.trailingAnchor, paddingRight: 16)
+                                 leading: view.leadingAnchor,
+                                 bottom: view.bottomAnchor,
+                                 trailing: view.trailingAnchor)
     }
     
     func setupAdditionalConfiguration() {
@@ -82,12 +82,12 @@ extension HomeRepoController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(cellClass: ListRepoTableViewCell.self, indexPath: indexPath)
-        cell.configure(content: ListRepoTableViewCell.Configuration(cardRepoView: viewModel.setCardRepoView()))
+        let cell = tableView.dequeue(cellClass: ItemListRepoTableViewCell.self, indexPath: indexPath)
+        cell.configure(content: ItemListRepoTableViewCell.Configuration(cardRepoView: viewModel.setCardRepoView()))
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        viewModel.shouldDetailsRepo()
     }
 }
