@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - DetailsRepoNavigationProtocol - Use in Coordinator
 protocol DetailsRepoNavigationProtocol: AnyObject {
-
+    func shouldPageRequestPull()
 }
 
 // MARK: - ViewModelProtocol - Protocol definition Use in Controller
@@ -19,6 +19,7 @@ protocol DetailsRepoViewModelProtocol: ViewModelProtocol {
     var isError: Observable<String?> { get }
     func setCardPullRequestView() -> CardPullRequestView.Configuration
     func setHeaderPullsView() -> HeaderPullsView.Configuration
+    func shouldPageRequestPull()
 }
 
 // MARK: - DetailsRepoViewModelProtocol
@@ -51,5 +52,9 @@ class DetailsRepoViewModel: DetailsRepoViewModelProtocol {
             openedText: "16",
             closedText: "800"
         )
+    }
+    
+    func shouldPageRequestPull() {
+        navigationDelegate.shouldPageRequestPull()
     }
 }

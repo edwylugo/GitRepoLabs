@@ -38,5 +38,8 @@ class DetailsRepoCoordinator: DetailsRepoCoordinatorProtocol {
 
 // MARK: - DetailsRepoNavigationProtocol
 extension DetailsRepoCoordinator: DetailsRepoNavigationProtocol {
-    
+    func shouldPageRequestPull() {
+        let coordinator = PagePullRequestCoordinator(navigationController)
+        coordinator.start()
+    }
 }

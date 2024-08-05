@@ -42,6 +42,9 @@
 		59F361372C6146B1001E6FF5 /* CardPullRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361362C6146B1001E6FF5 /* CardPullRequestView.swift */; };
 		59F361392C614D49001E6FF5 /* ProfileUserPullRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361382C614D49001E6FF5 /* ProfileUserPullRequestView.swift */; };
 		59F3613B2C61537F001E6FF5 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F3613A2C61537F001E6FF5 /* LineView.swift */; };
+		59F361412C615A2C001E6FF5 /* PagePullRequestCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361402C615A2C001E6FF5 /* PagePullRequestCoordinator.swift */; };
+		59F361432C615A92001E6FF5 /* PagePullRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361422C615A92001E6FF5 /* PagePullRequestViewModel.swift */; };
+		59F361452C615A9A001E6FF5 /* PagePullRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361442C615A9A001E6FF5 /* PagePullRequestController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +104,9 @@
 		59F361362C6146B1001E6FF5 /* CardPullRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPullRequestView.swift; sourceTree = "<group>"; };
 		59F361382C614D49001E6FF5 /* ProfileUserPullRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserPullRequestView.swift; sourceTree = "<group>"; };
 		59F3613A2C61537F001E6FF5 /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		59F361402C615A2C001E6FF5 /* PagePullRequestCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagePullRequestCoordinator.swift; sourceTree = "<group>"; };
+		59F361422C615A92001E6FF5 /* PagePullRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagePullRequestViewModel.swift; sourceTree = "<group>"; };
+		59F361442C615A9A001E6FF5 /* PagePullRequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagePullRequestController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +190,7 @@
 			children = (
 				59F360F42C5F0807001E6FF5 /* HomeRepo */,
 				59F360F52C5F080C001E6FF5 /* DetailsRepo */,
+				59F3613C2C61590D001E6FF5 /* PagePullRequest */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -357,6 +364,40 @@
 			path = Icons;
 			sourceTree = "<group>";
 		};
+		59F3613C2C61590D001E6FF5 /* PagePullRequest */ = {
+			isa = PBXGroup;
+			children = (
+				59F3613D2C6159B3001E6FF5 /* Coordinator */,
+				59F3613F2C6159BC001E6FF5 /* ViewModel */,
+				59F3613E2C6159B8001E6FF5 /* Controller */,
+			);
+			path = PagePullRequest;
+			sourceTree = "<group>";
+		};
+		59F3613D2C6159B3001E6FF5 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				59F361402C615A2C001E6FF5 /* PagePullRequestCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		59F3613E2C6159B8001E6FF5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				59F361442C615A9A001E6FF5 /* PagePullRequestController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		59F3613F2C6159BC001E6FF5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				59F361422C615A92001E6FF5 /* PagePullRequestViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -495,6 +536,7 @@
 				59F3610D2C5F0A36001E6FF5 /* CodeView.swift in Sources */,
 				59F361052C5F0968001E6FF5 /* DetailsRepoCoordinator.swift in Sources */,
 				59F3612D2C5F33CC001E6FF5 /* ProfileUserRepoView.swift in Sources */,
+				59F361432C615A92001E6FF5 /* PagePullRequestViewModel.swift in Sources */,
 				59F3613B2C61537F001E6FF5 /* LineView.swift in Sources */,
 				59F361392C614D49001E6FF5 /* ProfileUserPullRequestView.swift in Sources */,
 				59F3612F2C60FB3E001E6FF5 /* HeaderView.swift in Sources */,
@@ -506,8 +548,10 @@
 				59F361332C613F45001E6FF5 /* UILabelExtension.swift in Sources */,
 				59F361132C5F0C7F001E6FF5 /* UIStackViewExtension.swift in Sources */,
 				59F3610B2C5F09FC001E6FF5 /* Apply.swift in Sources */,
+				59F361412C615A2C001E6FF5 /* PagePullRequestCoordinator.swift in Sources */,
 				59F361152C5F0F3B001E6FF5 /* Observable.swift in Sources */,
 				59F361172C5F0F5E001E6FF5 /* ViewModelProtocol.swift in Sources */,
+				59F361452C615A9A001E6FF5 /* PagePullRequestController.swift in Sources */,
 				59F361212C5F2266001E6FF5 /* CardRepoView.swift in Sources */,
 				59F3612B2C5F2E23001E6FF5 /* Images.swift in Sources */,
 				59F361312C613B0B001E6FF5 /* HeaderPullsView.swift in Sources */,
