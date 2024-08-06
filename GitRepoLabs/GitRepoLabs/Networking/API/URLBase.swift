@@ -12,21 +12,19 @@ struct API {
     private static let environmentFile = Bundle.main.path(forResource: "environment", ofType: "plist")
     
     static func baseURL() -> String {
-        if let environmentFile = environmentFile {
-            if let environmentDictionary = NSDictionary(contentsOfFile: environmentFile) {
-                return environmentDictionary["BaseUrl"] as? String ?? ""
-            }
-        }
-        return ""
+        return loadEnvironmentDictionary()?["BaseUrl"] as? String ?? ""
     }
     
     // PERSONAL ACCESS - Expire in 90 days
     static func tokenGit() -> String {
-        if let environmentFile = environmentFile {
-            if let environmentDictionary = NSDictionary(contentsOfFile: environmentFile) {
-                return environmentDictionary["PersonalToken"] as? String ?? ""
-            }
+        return loadEnvironmentDictionary()?["PersonalToken"] as? String ?? ""
+    }
+    
+    private static func loadEnvironmentDictionary() -> [String: Any]? {
+        guard let environmentFile = environmentFile,
+              let environmentDictionary = NSDictionary(contentsOfFile: environmentFile) as? [String: Any] else {
+            return nil
         }
-        return ""
+        return environmentDictionary
     }
 }
