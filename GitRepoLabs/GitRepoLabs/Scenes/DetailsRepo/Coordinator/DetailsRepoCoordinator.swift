@@ -8,7 +8,7 @@
 import UIKit
 
 protocol DetailsRepoCoordinatorProtocol: Coordinator {
-    func sceneDetailsRepo()
+    func sceneDetailsRepo(repository: RepositoryModel)
 }
 
 class DetailsRepoCoordinator: DetailsRepoCoordinatorProtocol {
@@ -22,15 +22,15 @@ class DetailsRepoCoordinator: DetailsRepoCoordinatorProtocol {
     var type: CoordinatorType { .detailsRepo }
     
     func start() {
-        sceneDetailsRepo()
+        
     }
     
     required init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
-    func sceneDetailsRepo() {
-        let viewModel = DetailsRepoViewModel(navigationDelegate: self)
+    func sceneDetailsRepo(repository: RepositoryModel) {
+        let viewModel = DetailsRepoViewModel(navigationDelegate: self, repository: repository)
         let controller = DetailsRepoController(viewModel: viewModel)
         navigationController.pushViewController(controller, animated: true)
     }

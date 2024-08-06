@@ -9,23 +9,23 @@ import Foundation
 
 struct Owner: Codable {
     let login: String
-    let id: Int
-    let nodeID: String
-    let avatarURL: String
-    let gravatarID: String
-    let url: String
-    let htmlURL: String
-    let followersURL: String
-    let followingURL: String
-    let gistsURL: String
-    let starredURL: String
-    let subscriptionsURL: String
-    let organizationsURL: String
-    let reposURL: String
-    let eventsURL: String
-    let receivedEventsURL: String
-    let type: String
-    let siteAdmin: Bool
+    let id: Int?
+    let nodeID: String?
+    let avatarURL: String?
+    let gravatarID: String?
+    let url: String?
+    let htmlURL: String?
+    let followersURL: String?
+    let followingURL: String?
+    let gistsURL: String?
+    let starredURL: String?
+    let subscriptionsURL: String?
+    let organizationsURL: String?
+    let reposURL: String?
+    let eventsURL: String?
+    let receivedEventsURL: String?
+    let type: String?
+    let siteAdmin: Bool?
     
     enum CodingKeys: String, CodingKey {
         case login

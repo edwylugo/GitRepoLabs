@@ -8,7 +8,7 @@
 import Foundation
 
 struct LinkModel: Codable {
-    let href: String
+    let href: String?
     
     enum CodingKeys: String, CodingKey {
         case href

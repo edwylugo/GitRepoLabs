@@ -8,11 +8,11 @@
 import Foundation
 
 struct HeadModel: Codable {
-    let label: String
-    let ref: String
-    let sha: String
-    let user: UserModel
-    let repo: RepositoryModel
+    let label: String?
+    let ref: String?
+    let sha: String?
+    let user: UserRepoModel?
+    let repo: RepositoryModel?
     
     enum CodingKeys: String, CodingKey {
         case label

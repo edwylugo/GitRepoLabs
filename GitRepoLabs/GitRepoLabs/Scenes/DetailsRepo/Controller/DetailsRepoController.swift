@@ -55,7 +55,19 @@ class DetailsRepoController: UIViewController {
     }
     
     func setupBindigs() {
-        listPullsTableView.reloadData()
+        viewModel.isLoading.bind { isLoading in
+            if isLoading {
+                self.showLoader(true)
+            } else {
+                self.showLoader(false)
+            }
+        }
+        
+        viewModel.pullRequestModel.bind { pullRequests in
+            if !pullRequests.isEmpty {
+                self.listPullsTableView.reloadData()
+            }
+        }
     }
 }
 
@@ -85,7 +97,7 @@ extension DetailsRepoController: CodeView {
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension DetailsRepoController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        viewModel.pullRequestModel.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

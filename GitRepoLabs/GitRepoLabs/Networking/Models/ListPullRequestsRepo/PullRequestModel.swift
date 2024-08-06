@@ -7,41 +7,41 @@
 
 import Foundation
 
-struct PullRequest: Codable {
-    let url: String
-    let id: Int
-    let nodeId: String
-    let htmlUrl: String
-    let diffUrl: String
-    let patchUrl: String
-    let issueUrl: String
-    let number: Int
-    let state: String
-    let locked: Bool
-    let title: String
-    let user: UserModel
+struct PullRequestModel: Codable {
+    let url: String?
+    let id: Int?
+    let nodeId: String?
+    let htmlUrl: String?
+    let diffUrl: String?
+    let patchUrl: String?
+    let issueUrl: String?
+    let number: Int?
+    let state: String?
+    let locked: Bool?
+    let title: String?
+    let user: UserRepoModel?
     let body: String?
-    let createdAt: String
-    let updatedAt: String
+    let createdAt: String?
+    let updatedAt: String?
     let closedAt: String?
     let mergedAt: String?
-    let mergeCommitSha: String
-    let assignee: String?
-    let assignees: [String]
-    let requestedReviewers: [String]
-    let requestedTeams: [String]
-    let labels: [String]
-    let milestone: String?
-    let draft: Bool
-    let commitsUrl: String
-    let reviewCommentsUrl: String
-    let reviewCommentUrl: String
-    let commentsUrl: String
-    let statusesUrl: String
-    let head: HeadModel
-    let base: BaseModel
-    let links: LinksModel
-    let authorAssociation: String
+    let mergeCommitSha: String?
+    let assignee: UserRepoModel?
+    let assignees: [UserRepoModel]?
+    let requestedReviewers: [UserRepoModel]?
+    let requestedTeams: [String]?
+    let labels: [LabelsModel]?
+    let milestone: Milestone?
+    let draft: Bool?
+    let commitsUrl: String?
+    let reviewCommentsUrl: String?
+    let reviewCommentUrl: String?
+    let commentsUrl: String?
+    let statusesUrl: String?
+    let head: HeadModel?
+    let base: BaseModel?
+    let links: LinksModel?
+    let authorAssociation: String?
     let autoMerge: String?
     let activeLockReason: String?
     

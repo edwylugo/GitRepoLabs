@@ -10,5 +10,6 @@ import Foundation
 enum Identifiers {
     case listRepo
     case listPullRequest
+    case user
     case nothing
 }

@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - HomeRepoNavigationProtocol - Use in Coordinator
 protocol HomeRepoNavigationProtocol: AnyObject {
-    func shouldDetailsRepo()
+    func shouldDetailsRepo(repository: RepositoryModel)
 }
 
 // MARK: - ViewModelProtocol - Protocol definition Use in Controller
@@ -18,7 +18,7 @@ protocol HomeRepoViewModelProtocol: ViewModelProtocol {
     var isLoading: Observable<Bool> { get }
     var isError: Observable<String?> { get }
     var isPullRefresh: Observable<Bool> { get }
-    func shouldDetailsRepo()
+    func shouldDetailsRepo(repository: RepositoryModel)
     var searchRepoResult: Observable<SearchRepoResultModel?> { get }
 }
 
@@ -47,8 +47,8 @@ class HomeRepoViewModel: HomeRepoViewModelProtocol {
         repoWs.getRepo()
     }
     
-    func shouldDetailsRepo() {
-        navigationDelegate.shouldDetailsRepo()
+    func shouldDetailsRepo(repository: RepositoryModel) {
+        navigationDelegate.shouldDetailsRepo(repository: repository)
     }
     
     func loadingControl(_ isHidden: Bool) {
@@ -59,6 +59,7 @@ class HomeRepoViewModel: HomeRepoViewModelProtocol {
 
 extension HomeRepoViewModel: WsDelegate {
     func wsFinishedWithSuccess(identifier: Identifiers, sender: NSDictionary, status: WsStatus, jsonResult: NSMutableArray) {
+        loadingControl(false)
         if identifier == .listRepo && status == .success {
             guard let senderDict = sender as? [String: Any] else {
                 print("O sender não é um dicionário válido.")
@@ -75,6 +76,6 @@ extension HomeRepoViewModel: WsDelegate {
     }
     
     func wsFinishedWithError(identifier: Identifiers, sender: NSDictionary, error: String, status: WsStatus, code: Int) {
-        
+        loadingControl(false)
     }
 }

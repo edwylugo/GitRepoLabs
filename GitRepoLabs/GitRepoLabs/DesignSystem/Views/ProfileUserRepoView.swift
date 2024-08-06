@@ -6,11 +6,16 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileUserRepoView: UIView {
     
     // MARK: - Properties
-    private let profileImageView = UIImageView(translateMask: false)
+    private let containerImage = UIView(translateMask: false)
+    private let profileImageView = UIImageView(translateMask: false).apply {
+        $0.contentMode = .scaleAspectFill
+        $0.setDimensions(width: 48, height: 48)
+    }
     private let usernameLabel = UILabel(translateMask: false)
     private let nameLabel = UILabel(translateMask: false)
     
@@ -30,17 +35,21 @@ class ProfileUserRepoView: UIView {
 extension ProfileUserRepoView: CodeView {
     
     func buildViewHierarchy() {
-        addSubview(profileImageView)
+        addSubview(containerImage)
+        containerImage.addSubview(profileImageView)
         addSubview(usernameLabel)
         addSubview(nameLabel)
     }
     
     func setupConstraints() {
-        profileImageView.anchor(top: topAnchor,
+        containerImage.anchor(top: topAnchor,
                                 leading: leadingAnchor,
-                                trailing: trailingAnchor)
+                                trailing: trailingAnchor, height: 48)
         
-        usernameLabel.anchor(top: profileImageView.bottomAnchor, paddingTop: 4,
+        profileImageView.centerX(inView: containerImage)
+        profileImageView.centerY(inView: containerImage)
+        
+        usernameLabel.anchor(top: containerImage.bottomAnchor, paddingTop: 4,
                              leading: leadingAnchor,
                              trailing: trailingAnchor)
         
@@ -52,7 +61,6 @@ extension ProfileUserRepoView: CodeView {
     }
     
     func setupAdditionalConfiguration() {
-        profileImageView.setHeight(height: 48)
         profileImageView.contentMode = .scaleAspectFit
         usernameLabel.font = UIFont.boldSystemFont(ofSize: 14)
         usernameLabel.textColor = .systemBlue
@@ -70,19 +78,23 @@ extension ProfileUserRepoView: Configurable {
     typealias Configuration = ProfileUserRepoViewContent
     
     struct ProfileUserRepoViewContent {
-        let profileIcon: UIImage
         let userNameText: String
         let nameText: String
+        let avatarURL: URL?
         
-        init(profileIcon: UIImage, userNameText: String, nameText: String) {
-            self.profileIcon = profileIcon
+        init(userNameText: String, nameText: String, avatarURL: URL?) {
             self.userNameText = userNameText
             self.nameText = nameText
+            self.avatarURL = avatarURL
         }
     }
     
     func configure(content: ProfileUserRepoViewContent) {
-        profileImageView.image = content.profileIcon
+        if content.avatarURL != nil {
+            profileImageView.sd_setImage(with: content.avatarURL)
+        } else {
+            profileImageView.image = Images.Icons.ic_profile
+        }
         usernameLabel.text = content.userNameText
         nameLabel.text = content.nameText
         setupAdditionalConfiguration()

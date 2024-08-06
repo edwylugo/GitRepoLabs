@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "jgprogresshud",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/JonasGessner/JGProgressHUD",
+      "state" : {
+        "revision" : "78d7cd35f1d90ff74fd82e486f2cbe4b24be8cf9",
+        "version" : "2.2.0"
+      }
+    },
+    {
+      "identity" : "sdwebimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SDWebImage/SDWebImage",
+      "state" : {
+        "revision" : "86e9185ef41c4238a93ad8efe61ddeb701e80bbf",
+        "version" : "5.19.5"
+      }
+    }
+  ],
+  "version" : 2
+}

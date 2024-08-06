@@ -20,23 +20,30 @@ protocol DetailsRepoViewModelProtocol: ViewModelProtocol {
     func setCardPullRequestView() -> CardPullRequestView.Configuration
     func setHeaderPullsView() -> HeaderPullsView.Configuration
     func shouldPageRequestPull()
+    var pullRequestModel: Observable<[PullRequestModel]> { get }
 }
 
 // MARK: - DetailsRepoViewModelProtocol
 class DetailsRepoViewModel: DetailsRepoViewModelProtocol {
-    func loadingControl(_ isHidden: Bool) {
-        
-    }
-    
     private var navigationDelegate: DetailsRepoNavigationProtocol
     var isLoading: Observable<Bool>
     var isError: Observable<String?>
+    var pullRequestModel: Observable<[PullRequestModel]>
 
     // MARK: - Initialization
-    init(navigationDelegate: DetailsRepoNavigationProtocol) {
+    init(navigationDelegate: DetailsRepoNavigationProtocol, repository: RepositoryModel) {
         self.navigationDelegate = navigationDelegate
         self.isLoading = Observable(false)
         self.isError = Observable("")
+        self.pullRequestModel = Observable([])
+        self.getPullRequestsRepo(criador: repository.owner.login, repo: repository.name)
+    }
+    
+    func getPullRequestsRepo(criador: String, repo: String) {
+        loadingControl(true)
+        let repoWs = RepoWs()
+        repoWs.delegate = self
+        repoWs.getPullRequestsRepo(criador: criador, repo: repo)
     }
     
     func setCardPullRequestView() -> CardPullRequestView.Configuration {
@@ -61,4 +68,29 @@ class DetailsRepoViewModel: DetailsRepoViewModelProtocol {
     func shouldPageRequestPull() {
         navigationDelegate.shouldPageRequestPull()
     }
+    
+    func loadingControl(_ isHidden: Bool) {
+        self.isLoading.value = isHidden
+    }
+}
+
+extension DetailsRepoViewModel: WsDelegate {
+    func wsFinishedWithSuccess(identifier: Identifiers, sender: NSDictionary, status: WsStatus, jsonResult: NSMutableArray) {
+        loadingControl(false)
+        if identifier == .listPullRequest && status == .success {
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: jsonResult, options: [])
+                let pullRequestModelJson = try JSONDecoder().decode([PullRequestModel].self, from: jsonData)
+                self.pullRequestModel.value = pullRequestModelJson
+            } catch {
+                print("Erro ao converter JSON ou decodificar: \(error)")
+            }
+        }
+    }
+    
+    func wsFinishedWithError(identifier: Identifiers, sender: NSDictionary, error: String, status: WsStatus, code: Int) {
+        loadingControl(false)
+    }
+    
+    
 }

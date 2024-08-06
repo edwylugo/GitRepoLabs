@@ -8,11 +8,11 @@
 import Foundation
 
 struct LicenseModel: Codable {
-    let key: String
-    let name: String
-    let spdxID: String
+    let key: String?
+    let name: String?
+    let spdxID: String?
     let url: String?
-    let nodeID: String
+    let nodeID: String?
     
     enum CodingKeys: String, CodingKey {
         case key

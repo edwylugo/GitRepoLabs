@@ -52,6 +52,14 @@ class HomeRepoController: UIViewController {
     }
     
     func setupBindigs() {
+        viewModel.isLoading.bind { isLoading in
+            if isLoading {
+                self.showLoader(true)
+            } else {
+                self.showLoader(false)
+            }
+        }
+        
         viewModel.searchRepoResult.bind { listRepo in
             if listRepo != nil {
                 self.listRepoTableView.reloadData()
@@ -82,28 +90,28 @@ extension HomeRepoController: CodeView {
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension HomeRepoController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let items = viewModel.searchRepoResult.value?.items.count else { return 0 }
+        guard let items = viewModel.searchRepoResult.value?.items?.count else { return 0 }
         return items
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(cellClass: ItemListRepoTableViewCell.self, indexPath: indexPath)
         
-        if let data = viewModel.searchRepoResult.value?.items[indexPath.row] {
+        if let data = viewModel.searchRepoResult.value?.items?[indexPath.row] {
             cell.configure(content: ItemListRepoTableViewCell.Configuration(cardRepoView: CardRepoView.Configuration(
                 titleAndBodyView: TitleAndBodyView.Configuration(
                     textTitle: data.name,
                     textBody: data.description ?? ""),
                 numberForksView: NumbersView.Configuration(
                     icon: Images.Icons.ic_forks,
-                    textNumber: data.forksCount.description),
+                    textNumber: data.forksCount?.description ?? "0"),
                 numberStarsView: NumbersView.Configuration(
                     icon: Images.Icons.ic_stars,
-                    textNumber: data.stargazersCount.description),
+                    textNumber: data.stargazersCount?.description ?? "0"),
                 profileUserRepoView: ProfileUserRepoView.Configuration(
-                    profileIcon: Images.Icons.ic_profile,
                     userNameText: data.owner.login,
-                    nameText: "Nome Sobrenome")
+                    nameText: "",
+                    avatarURL: URL(string: data.owner.avatarURL ?? ""))
             )))
         }
         return cell
@@ -114,6 +122,8 @@ extension HomeRepoController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.shouldDetailsRepo()
+        if let data = viewModel.searchRepoResult.value?.items?[indexPath.row] {
+            viewModel.shouldDetailsRepo(repository: data)
+        }
     }
 }

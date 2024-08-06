@@ -26,4 +26,11 @@ class RepoWs: WebService {
         super.identifier = .listPullRequest
         super.get(url: "\(API.baseURL())repos/\(criador)/\(repo)/pulls")
     }
+    
+    // MARK: - Obter dados do Usuário
+    // get -> https://api.github.com/users/<login>
+    func getUser(login: String) {
+        super.identifier = .user
+        super.get(url: "\(API.baseURL())users/\(login)")
+    }
 }
