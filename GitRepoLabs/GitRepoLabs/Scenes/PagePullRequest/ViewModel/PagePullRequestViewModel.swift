@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import WebKit
 
 // MARK: - PagePullRequestNavigationProtocol - Use in Coordinator
 protocol PagePullRequestNavigationProtocol: AnyObject {
@@ -18,6 +19,7 @@ protocol PagePullRequestViewModelProtocol: ViewModelProtocol {
     var isLoading: Observable<Bool> { get }
     var isError: Observable<String?> { get }
     var urlString: String? { get }
+    func getWKWebViewConfiguration() -> WKWebViewConfiguration
 }
 
 // MARK: - PagePullRequestViewModelProtocol
@@ -33,5 +35,21 @@ class PagePullRequestViewModel: PagePullRequestViewModelProtocol {
         self.isLoading = Observable(false)
         self.isError = Observable("")
         self.urlString = "https://github.com/"
+    }
+    
+    func getWKWebViewConfiguration() -> WKWebViewConfiguration {
+        let processPool = WKProcessPool()
+        let dataStore = WKWebsiteDataStore.default()
+        
+        let preferences = WKWebpagePreferences()
+        preferences.allowsContentJavaScript = true
+        
+        let userController = WKUserContentController()
+        let configuration = WKWebViewConfiguration()
+        configuration.userContentController = userController
+        configuration.defaultWebpagePreferences = preferences
+        configuration.processPool = processPool
+        configuration.websiteDataStore = dataStore
+        return configuration
     }
 }

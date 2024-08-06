@@ -45,6 +45,12 @@
 		59F361412C615A2C001E6FF5 /* PagePullRequestCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361402C615A2C001E6FF5 /* PagePullRequestCoordinator.swift */; };
 		59F361432C615A92001E6FF5 /* PagePullRequestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361422C615A92001E6FF5 /* PagePullRequestViewModel.swift */; };
 		59F361452C615A9A001E6FF5 /* PagePullRequestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361442C615A9A001E6FF5 /* PagePullRequestController.swift */; };
+		59F3614A2C618E64001E6FF5 /* WsStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361492C618E64001E6FF5 /* WsStatus.swift */; };
+		59F3614C2C6199AF001E6FF5 /* Methods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F3614B2C6199AF001E6FF5 /* Methods.swift */; };
+		59F3614E2C619A6D001E6FF5 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F3614D2C619A6D001E6FF5 /* Identifiers.swift */; };
+		59F361502C619AF8001E6FF5 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F3614F2C619AF8001E6FF5 /* WebService.swift */; };
+		59F361522C619BAC001E6FF5 /* URLBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361512C619BAC001E6FF5 /* URLBase.swift */; };
+		59F361552C619E56001E6FF5 /* RepoWs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361542C619E56001E6FF5 /* RepoWs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +113,12 @@
 		59F361402C615A2C001E6FF5 /* PagePullRequestCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagePullRequestCoordinator.swift; sourceTree = "<group>"; };
 		59F361422C615A92001E6FF5 /* PagePullRequestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagePullRequestViewModel.swift; sourceTree = "<group>"; };
 		59F361442C615A9A001E6FF5 /* PagePullRequestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagePullRequestController.swift; sourceTree = "<group>"; };
+		59F361492C618E64001E6FF5 /* WsStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WsStatus.swift; sourceTree = "<group>"; };
+		59F3614B2C6199AF001E6FF5 /* Methods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Methods.swift; sourceTree = "<group>"; };
+		59F3614D2C619A6D001E6FF5 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
+		59F3614F2C619AF8001E6FF5 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		59F361512C619BAC001E6FF5 /* URLBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBase.swift; sourceTree = "<group>"; };
+		59F361542C619E56001E6FF5 /* RepoWs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoWs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,11 +169,11 @@
 		59F360B92C5F009E001E6FF5 /* GitRepoLabs */ = {
 			isa = PBXGroup;
 			children = (
-				59F360EF2C5F01A8001E6FF5 /* API */,
 				59F360F02C5F01B0001E6FF5 /* DesignSystem */,
 				59F360EB2C5F0192001E6FF5 /* Coordinator */,
 				59F360ED2C5F0199001E6FF5 /* Delegates */,
 				59F360EC2C5F0196001E6FF5 /* Resources */,
+				59F361462C618A84001E6FF5 /* Networking */,
 				59F360EE2C5F01A2001E6FF5 /* Utils */,
 				59F360EA2C5F018F001E6FF5 /* Scenes */,
 			);
@@ -236,6 +248,7 @@
 		59F360EF2C5F01A8001E6FF5 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				59F361512C619BAC001E6FF5 /* URLBase.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -398,6 +411,43 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		59F361462C618A84001E6FF5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				59F360EF2C5F01A8001E6FF5 /* API */,
+				59F361472C618A8A001E6FF5 /* Network */,
+				59F361482C618A8D001E6FF5 /* Services */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		59F361472C618A8A001E6FF5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				59F361492C618E64001E6FF5 /* WsStatus.swift */,
+				59F3614B2C6199AF001E6FF5 /* Methods.swift */,
+				59F3614D2C619A6D001E6FF5 /* Identifiers.swift */,
+				59F3614F2C619AF8001E6FF5 /* WebService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		59F361482C618A8D001E6FF5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				59F361532C619E3C001E6FF5 /* Ws */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		59F361532C619E3C001E6FF5 /* Ws */ = {
+			isa = PBXGroup;
+			children = (
+				59F361542C619E56001E6FF5 /* RepoWs.swift */,
+			);
+			path = Ws;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -536,6 +586,7 @@
 				59F3610D2C5F0A36001E6FF5 /* CodeView.swift in Sources */,
 				59F361052C5F0968001E6FF5 /* DetailsRepoCoordinator.swift in Sources */,
 				59F3612D2C5F33CC001E6FF5 /* ProfileUserRepoView.swift in Sources */,
+				59F3614C2C6199AF001E6FF5 /* Methods.swift in Sources */,
 				59F361432C615A92001E6FF5 /* PagePullRequestViewModel.swift in Sources */,
 				59F3613B2C61537F001E6FF5 /* LineView.swift in Sources */,
 				59F361392C614D49001E6FF5 /* ProfileUserPullRequestView.swift in Sources */,
@@ -545,20 +596,25 @@
 				59F361372C6146B1001E6FF5 /* CardPullRequestView.swift in Sources */,
 				59F3611C2C5F1C91001E6FF5 /* UITableViewExtension.swift in Sources */,
 				59F361092C5F0979001E6FF5 /* DetailsRepoController.swift in Sources */,
+				59F361552C619E56001E6FF5 /* RepoWs.swift in Sources */,
 				59F361332C613F45001E6FF5 /* UILabelExtension.swift in Sources */,
 				59F361132C5F0C7F001E6FF5 /* UIStackViewExtension.swift in Sources */,
 				59F3610B2C5F09FC001E6FF5 /* Apply.swift in Sources */,
 				59F361412C615A2C001E6FF5 /* PagePullRequestCoordinator.swift in Sources */,
+				59F3614E2C619A6D001E6FF5 /* Identifiers.swift in Sources */,
+				59F361502C619AF8001E6FF5 /* WebService.swift in Sources */,
 				59F361152C5F0F3B001E6FF5 /* Observable.swift in Sources */,
 				59F361172C5F0F5E001E6FF5 /* ViewModelProtocol.swift in Sources */,
 				59F361452C615A9A001E6FF5 /* PagePullRequestController.swift in Sources */,
 				59F361212C5F2266001E6FF5 /* CardRepoView.swift in Sources */,
 				59F3612B2C5F2E23001E6FF5 /* Images.swift in Sources */,
 				59F361312C613B0B001E6FF5 /* HeaderPullsView.swift in Sources */,
+				59F361522C619BAC001E6FF5 /* URLBase.swift in Sources */,
 				59F361072C5F0970001E6FF5 /* DetailsRepoViewModel.swift in Sources */,
 				59F3611F2C5F1E45001E6FF5 /* ItemListRepoTableViewCell.swift in Sources */,
 				59F361262C5F2884001E6FF5 /* NumbersView.swift in Sources */,
 				59F361282C5F2D38001E6FF5 /* UIColorExtension.swift in Sources */,
+				59F3614A2C618E64001E6FF5 /* WsStatus.swift in Sources */,
 				59F360F32C5F03B8001E6FF5 /* CoordinatorProtocol.swift in Sources */,
 				59F360FD2C5F08A4001E6FF5 /* HomeRepoCoordinator.swift in Sources */,
 			);

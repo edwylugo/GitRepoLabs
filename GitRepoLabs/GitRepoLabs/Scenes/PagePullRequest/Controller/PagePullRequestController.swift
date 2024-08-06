@@ -41,7 +41,7 @@ class PagePullRequestController: UIViewController {
     }
     
     func setupWebView() {
-        webView = WKWebView(frame: view.bounds, configuration: getWKWebViewConfiguration())
+        webView = WKWebView(frame: view.bounds, configuration: viewModel.getWKWebViewConfiguration())
         webView.navigationDelegate = self
         
         if let urlString = viewModel.urlString, let url = URL(string: urlString) {
@@ -51,22 +51,6 @@ class PagePullRequestController: UIViewController {
             webView.load(request)
             webView.allowsBackForwardNavigationGestures = false
         }
-    }
-    
-    func getWKWebViewConfiguration() -> WKWebViewConfiguration {
-        let processPool = WKProcessPool()
-        let dataStore = WKWebsiteDataStore.default()
-        
-        let preferences = WKWebpagePreferences()
-        preferences.allowsContentJavaScript = true
-        
-        let userController = WKUserContentController()
-        let configuration = WKWebViewConfiguration()
-        configuration.userContentController = userController
-        configuration.defaultWebpagePreferences = preferences
-        configuration.processPool = processPool
-        configuration.websiteDataStore = dataStore
-        return configuration
     }
 }
 
@@ -79,13 +63,9 @@ extension PagePullRequestController: CodeView {
     func setupConstraints() {
         webView.anchor(
             top: view.topAnchor,
-            paddingTop: 24,
             leading: view.leadingAnchor,
-            paddingLeft: 24,
             bottom: view.bottomAnchor,
-            paddingBottom: 24,
-            trailing: view.trailingAnchor,
-            paddingRight: 24
+            trailing: view.trailingAnchor
         )
     }
     
