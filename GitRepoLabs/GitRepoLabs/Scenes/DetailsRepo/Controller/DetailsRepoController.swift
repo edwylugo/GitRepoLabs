@@ -18,6 +18,7 @@ class DetailsRepoController: UIViewController {
         $0.allowsSelection = true
         $0.bounces = true
         $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.isHidden = true
     }
     
     private var viewModel: DetailsRepoViewModelProtocol
@@ -65,6 +66,7 @@ class DetailsRepoController: UIViewController {
         
         viewModel.pullRequestModel.bind { pullRequests in
             if !pullRequests.isEmpty {
+                self.listPullsTableView.isHidden = false
                 self.listPullsTableView.reloadData()
             }
         }

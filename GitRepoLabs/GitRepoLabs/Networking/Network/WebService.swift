@@ -35,8 +35,10 @@ class WebService: NSObject, URLSessionDelegate {
     
     override init() {
         super.init()
-        self.addHeader(name: "Authorization", value: "Bearer \(API.tokenGit())")
-        self.addHeader(name: "Cache-Control", value: "private, no-cache, no-store")
+        if !API.tokenGit().isEmpty {
+            self.addHeader(name: "Authorization", value: "Bearer \(API.tokenGit())")
+            self.addHeader(name: "Cache-Control", value: "private, no-cache, no-store")
+        }
     }
     
     private func request(httpMethod: String, url: String) {

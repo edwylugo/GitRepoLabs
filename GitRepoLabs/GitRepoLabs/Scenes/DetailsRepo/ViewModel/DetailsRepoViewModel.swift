@@ -53,16 +53,19 @@ class DetailsRepoViewModel: DetailsRepoViewModelProtocol {
                 textTitle: data.title ?? "",
                 textBody: data.body ?? ""),
             profileUserPullRequestView: ProfileUserPullRequestView.Configuration(
-                profileIcon: Images.Icons.ic_profile,
                 userNameText: data.user?.login ?? "",
-                nameText: data.user?.type ?? "")
+                nameText: data.user?.type ?? "",
+                avatarURL: URL(string: data.user?.avatarUrl ?? ""))
         )
     }
     
     func setHeaderPullsView() -> HeaderPullsView.Configuration {
+        let openedPullRequests = pullRequestModel.value.filter { $0.state == "open" }
+        let closedPullRequests = pullRequestModel.value.filter { $0.state == "closed" }
+
         return HeaderPullsView.Configuration(
-            openedText: "16",
-            closedText: "800"
+            openedText: "\(openedPullRequests.count)",
+            closedText: "\(closedPullRequests.count)"
         )
     }
     

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ProfileUserPullRequestView: UIView {
     
@@ -69,19 +70,23 @@ extension ProfileUserPullRequestView: Configurable {
     typealias Configuration = ProfileUserPullRequestViewContent
     
     struct ProfileUserPullRequestViewContent {
-        let profileIcon: UIImage
         let userNameText: String
         let nameText: String
+        let avatarURL: URL?
         
-        init(profileIcon: UIImage, userNameText: String, nameText: String) {
-            self.profileIcon = profileIcon
+        init(userNameText: String, nameText: String, avatarURL: URL?) {
             self.userNameText = userNameText
             self.nameText = nameText
+            self.avatarURL = avatarURL
         }
     }
     
     func configure(content: ProfileUserPullRequestViewContent) {
-        profileImageView.image = content.profileIcon
+        if content.avatarURL != nil {
+            profileImageView.sd_setImage(with: content.avatarURL)
+        } else {
+            profileImageView.image = Images.Icons.ic_profile
+        }
         usernameLabel.text = content.userNameText
         nameLabel.text = content.nameText
         setupAdditionalConfiguration()
