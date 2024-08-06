@@ -11,6 +11,7 @@ import UIKit
 // MARK: - HomeRepoNavigationProtocol - Use in Coordinator
 protocol HomeRepoNavigationProtocol: AnyObject {
     func shouldDetailsRepo(repository: RepositoryModel)
+    func shouldError(message: String)
 }
 
 // MARK: - ViewModelProtocol - Protocol definition Use in Controller
@@ -94,7 +95,7 @@ extension HomeRepoViewModel: WsDelegate {
         loadingControl(false)
         if identifier == .listRepo && status == .success {
             guard let senderDict = sender as? [String: Any] else {
-                print("O sender não é um dicionário válido.")
+                navigationDelegate.shouldError(message: "O sender não é um dicionário válido.")
                 return
             }
             do {
@@ -111,7 +112,7 @@ extension HomeRepoViewModel: WsDelegate {
                     self.hasMoreData = false
                 }
             } catch {
-                print("Erro ao converter JSON ou decodificar: \(error)")
+                navigationDelegate.shouldError(message: "Erro ao converter JSON ou decodificar: \(error)")
             }
         }
     }
@@ -119,5 +120,6 @@ extension HomeRepoViewModel: WsDelegate {
     func wsFinishedWithError(identifier: Identifiers, sender: NSDictionary, error: String, status: WsStatus, code: Int) {
         loadingControl(false)
         self.hasMoreData = false
+        navigationDelegate.shouldError(message: "\(error)")
     }
 }

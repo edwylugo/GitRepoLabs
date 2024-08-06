@@ -44,6 +44,10 @@ class HomeRepoCoordinator: HomeRepoCoordinatorProtocol {
 
 // MARK: - HomeRepoNavigationProtocol
 extension HomeRepoCoordinator: HomeRepoNavigationProtocol {
+    func shouldError(message: String) {
+        showMessage(withTitle: "Error", message: message)
+    }
+    
     func shouldDetailsRepo(repository: RepositoryModel) {
         let coordinator = DetailsRepoCoordinator(navigationController)
         coordinator.sceneDetailsRepo(repository: repository)

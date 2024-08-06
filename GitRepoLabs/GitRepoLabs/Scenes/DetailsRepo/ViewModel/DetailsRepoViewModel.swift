@@ -11,6 +11,7 @@ import UIKit
 // MARK: - DetailsRepoNavigationProtocol - Use in Coordinator
 protocol DetailsRepoNavigationProtocol: AnyObject {
     func shouldPageRequestPull(urlString: String)
+    func shouldError(message: String)
 }
 
 // MARK: - ViewModelProtocol - Protocol definition Use in Controller
@@ -88,12 +89,13 @@ extension DetailsRepoViewModel: WsDelegate {
                 let pullRequestModelJson = try JSONDecoder().decode([PullRequestModel].self, from: jsonData)
                 self.pullRequestModel.value = pullRequestModelJson
             } catch {
-                print("Erro ao converter JSON ou decodificar: \(error)")
+                navigationDelegate.shouldError(message: "Erro ao converter JSON ou decodificar: \(error)")
             }
         }
     }
     
     func wsFinishedWithError(identifier: Identifiers, sender: NSDictionary, error: String, status: WsStatus, code: Int) {
         loadingControl(false)
+        navigationDelegate.shouldError(message: "\(error)")
     }
 }

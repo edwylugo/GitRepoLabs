@@ -44,6 +44,10 @@ class DetailsRepoCoordinator: DetailsRepoCoordinatorProtocol {
 
 // MARK: - DetailsRepoNavigationProtocol
 extension DetailsRepoCoordinator: DetailsRepoNavigationProtocol {
+    func shouldError(message: String) {
+        showMessage(withTitle: "Error", message: message)
+    }
+    
     func shouldPageRequestPull(urlString: String) {
         let coordinator = PagePullRequestCoordinator(navigationController)
         coordinator.scenePagePullRequest(urlString: urlString)
