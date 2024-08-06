@@ -68,6 +68,20 @@
 		59F361802C61DBD4001E6FF5 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 59F3617F2C61DBD4001E6FF5 /* JGProgressHUD */; };
 		59F361872C61EEDE001E6FF5 /* LabelsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361862C61EEDE001E6FF5 /* LabelsModel.swift */; };
 		59F361892C61EFA5001E6FF5 /* MilestoneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361882C61EFA5001E6FF5 /* MilestoneModel.swift */; };
+		59F361BA2C62B355001E6FF5 /* ImagesSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361B92C62B355001E6FF5 /* ImagesSpec.swift */; };
+		59F361C72C62B76F001E6FF5 /* DetailsRepoCoordinatorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361C62C62B76F001E6FF5 /* DetailsRepoCoordinatorSpec.swift */; };
+		59F361C92C62BB72001E6FF5 /* DetailsRepoViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361C82C62BB72001E6FF5 /* DetailsRepoViewModelSpec.swift */; };
+		59F361CD2C62BC4F001E6FF5 /* MockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361CA2C62BC38001E6FF5 /* MockModel.swift */; };
+		59F361D42C62C017001E6FF5 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 59F361D32C62C017001E6FF5 /* Quick */; };
+		59F361D62C62C017001E6FF5 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 59F361D52C62C017001E6FF5 /* Nimble */; };
+		59F361D82C62C0F6001E6FF5 /* UITableViewExtensionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361D72C62C0F6001E6FF5 /* UITableViewExtensionsSpec.swift */; };
+		59F361DA2C62C309001E6FF5 /* UIStackViewExtensionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361D92C62C309001E6FF5 /* UIStackViewExtensionsSpec.swift */; };
+		59F361DC2C62C358001E6FF5 /* MethodsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361DB2C62C358001E6FF5 /* MethodsSpec.swift */; };
+		59F361DE2C62C3EF001E6FF5 /* UIColorExtensionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361DD2C62C3EF001E6FF5 /* UIColorExtensionsSpec.swift */; };
+		59F361E02C62C4A8001E6FF5 /* CardPullRequestViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361DF2C62C4A8001E6FF5 /* CardPullRequestViewSpec.swift */; };
+		59F361E22C62C5EA001E6FF5 /* UILabelExtensionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361E12C62C5EA001E6FF5 /* UILabelExtensionsSpec.swift */; };
+		59F361E62C62C833001E6FF5 /* HeaderPullsViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361E52C62C833001E6FF5 /* HeaderPullsViewSpec.swift */; };
+		59F361E82C62C97A001E6FF5 /* ItemPullRequestTableViewCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361E72C62C97A001E6FF5 /* ItemPullRequestTableViewCellSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +164,18 @@
 		59F3617C2C61DBAB001E6FF5 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		59F361862C61EEDE001E6FF5 /* LabelsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelsModel.swift; sourceTree = "<group>"; };
 		59F361882C61EFA5001E6FF5 /* MilestoneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneModel.swift; sourceTree = "<group>"; };
+		59F361B92C62B355001E6FF5 /* ImagesSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesSpec.swift; sourceTree = "<group>"; };
+		59F361C62C62B76F001E6FF5 /* DetailsRepoCoordinatorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRepoCoordinatorSpec.swift; sourceTree = "<group>"; };
+		59F361C82C62BB72001E6FF5 /* DetailsRepoViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRepoViewModelSpec.swift; sourceTree = "<group>"; };
+		59F361CA2C62BC38001E6FF5 /* MockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockModel.swift; sourceTree = "<group>"; };
+		59F361D72C62C0F6001E6FF5 /* UITableViewExtensionsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensionsSpec.swift; sourceTree = "<group>"; };
+		59F361D92C62C309001E6FF5 /* UIStackViewExtensionsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtensionsSpec.swift; sourceTree = "<group>"; };
+		59F361DB2C62C358001E6FF5 /* MethodsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MethodsSpec.swift; sourceTree = "<group>"; };
+		59F361DD2C62C3EF001E6FF5 /* UIColorExtensionsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensionsSpec.swift; sourceTree = "<group>"; };
+		59F361DF2C62C4A8001E6FF5 /* CardPullRequestViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPullRequestViewSpec.swift; sourceTree = "<group>"; };
+		59F361E12C62C5EA001E6FF5 /* UILabelExtensionsSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExtensionsSpec.swift; sourceTree = "<group>"; };
+		59F361E52C62C833001E6FF5 /* HeaderPullsViewSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderPullsViewSpec.swift; sourceTree = "<group>"; };
+		59F361E72C62C97A001E6FF5 /* ItemPullRequestTableViewCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPullRequestTableViewCellSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +193,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59F361D42C62C017001E6FF5 /* Quick in Frameworks */,
+				59F361D62C62C017001E6FF5 /* Nimble in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +215,7 @@
 				59F360D02C5F00A0001E6FF5 /* GitRepoLabsTests */,
 				59F360DA2C5F00A0001E6FF5 /* GitRepoLabsUITests */,
 				59F360B82C5F009E001E6FF5 /* Products */,
+				59F361CE2C62BFFA001E6FF5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -219,6 +248,18 @@
 			isa = PBXGroup;
 			children = (
 				59F360D12C5F00A0001E6FF5 /* GitRepoLabsTests.swift */,
+				59F361B92C62B355001E6FF5 /* ImagesSpec.swift */,
+				59F361C62C62B76F001E6FF5 /* DetailsRepoCoordinatorSpec.swift */,
+				59F361C82C62BB72001E6FF5 /* DetailsRepoViewModelSpec.swift */,
+				59F361CA2C62BC38001E6FF5 /* MockModel.swift */,
+				59F361D72C62C0F6001E6FF5 /* UITableViewExtensionsSpec.swift */,
+				59F361D92C62C309001E6FF5 /* UIStackViewExtensionsSpec.swift */,
+				59F361DB2C62C358001E6FF5 /* MethodsSpec.swift */,
+				59F361DD2C62C3EF001E6FF5 /* UIColorExtensionsSpec.swift */,
+				59F361DF2C62C4A8001E6FF5 /* CardPullRequestViewSpec.swift */,
+				59F361E12C62C5EA001E6FF5 /* UILabelExtensionsSpec.swift */,
+				59F361E52C62C833001E6FF5 /* HeaderPullsViewSpec.swift */,
+				59F361E72C62C97A001E6FF5 /* ItemPullRequestTableViewCellSpec.swift */,
 			);
 			path = GitRepoLabsTests;
 			sourceTree = "<group>";
@@ -536,6 +577,13 @@
 			path = Dev;
 			sourceTree = "<group>";
 		};
+		59F361CE2C62BFFA001E6FF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -575,6 +623,10 @@
 				59F360CF2C5F00A0001E6FF5 /* PBXTargetDependency */,
 			);
 			name = GitRepoLabsTests;
+			packageProductDependencies = (
+				59F361D32C62C017001E6FF5 /* Quick */,
+				59F361D52C62C017001E6FF5 /* Nimble */,
+			);
 			productName = GitRepoLabsTests;
 			productReference = 59F360CD2C5F00A0001E6FF5 /* GitRepoLabsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -632,6 +684,8 @@
 			packageReferences = (
 				59F361772C61D6D0001E6FF5 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				59F3617E2C61DBD4001E6FF5 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+				59F361BE2C62B426001E6FF5 /* XCRemoteSwiftPackageReference "Quick" */,
+				59F361C12C62B433001E6FF5 /* XCRemoteSwiftPackageReference "Nimble" */,
 			);
 			productRefGroup = 59F360B82C5F009E001E6FF5 /* Products */;
 			projectDirPath = "";
@@ -706,6 +760,7 @@
 				59F3616E2C61C93B001E6FF5 /* LicenseModel.swift in Sources */,
 				59F361132C5F0C7F001E6FF5 /* UIStackViewExtension.swift in Sources */,
 				59F3610B2C5F09FC001E6FF5 /* Apply.swift in Sources */,
+				59F361CD2C62BC4F001E6FF5 /* MockModel.swift in Sources */,
 				59F361412C615A2C001E6FF5 /* PagePullRequestCoordinator.swift in Sources */,
 				59F3614E2C619A6D001E6FF5 /* Identifiers.swift in Sources */,
 				59F361502C619AF8001E6FF5 /* WebService.swift in Sources */,
@@ -735,7 +790,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59F361C92C62BB72001E6FF5 /* DetailsRepoViewModelSpec.swift in Sources */,
+				59F361C72C62B76F001E6FF5 /* DetailsRepoCoordinatorSpec.swift in Sources */,
+				59F361DC2C62C358001E6FF5 /* MethodsSpec.swift in Sources */,
+				59F361E22C62C5EA001E6FF5 /* UILabelExtensionsSpec.swift in Sources */,
+				59F361E82C62C97A001E6FF5 /* ItemPullRequestTableViewCellSpec.swift in Sources */,
+				59F361E02C62C4A8001E6FF5 /* CardPullRequestViewSpec.swift in Sources */,
 				59F360D22C5F00A0001E6FF5 /* GitRepoLabsTests.swift in Sources */,
+				59F361BA2C62B355001E6FF5 /* ImagesSpec.swift in Sources */,
+				59F361DA2C62C309001E6FF5 /* UIStackViewExtensionsSpec.swift in Sources */,
+				59F361E62C62C833001E6FF5 /* HeaderPullsViewSpec.swift in Sources */,
+				59F361DE2C62C3EF001E6FF5 /* UIColorExtensionsSpec.swift in Sources */,
+				59F361D82C62C0F6001E6FF5 /* UITableViewExtensionsSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1088,6 +1154,22 @@
 				minimumVersion = 2.2.0;
 			};
 		};
+		59F361BE2C62B426001E6FF5 /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick.git";
+			requirement = {
+				kind = exactVersion;
+				version = 7.0.0;
+			};
+		};
+		59F361C12C62B433001E6FF5 /* XCRemoteSwiftPackageReference "Nimble" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Nimble.git";
+			requirement = {
+				kind = exactVersion;
+				version = 12.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1105,6 +1187,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 59F3617E2C61DBD4001E6FF5 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
 			productName = JGProgressHUD;
+		};
+		59F361D32C62C017001E6FF5 /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59F361BE2C62B426001E6FF5 /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
+		};
+		59F361D52C62C017001E6FF5 /* Nimble */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59F361C12C62B433001E6FF5 /* XCRemoteSwiftPackageReference "Nimble" */;
+			productName = Nimble;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

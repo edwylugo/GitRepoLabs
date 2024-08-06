@@ -96,6 +96,4 @@ extension DetailsRepoViewModel: WsDelegate {
     func wsFinishedWithError(identifier: Identifiers, sender: NSDictionary, error: String, status: WsStatus, code: Int) {
         loadingControl(false)
     }
-    
-    
 }
