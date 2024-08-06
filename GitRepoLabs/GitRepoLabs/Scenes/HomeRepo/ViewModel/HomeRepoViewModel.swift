@@ -18,7 +18,6 @@ protocol HomeRepoViewModelProtocol: ViewModelProtocol {
     var isLoading: Observable<Bool> { get }
     var isError: Observable<String?> { get }
     var isPullRefresh: Observable<Bool> { get }
-    func setCardRepoView() -> CardRepoView.Configuration
     func shouldDetailsRepo()
     var searchRepoResult: Observable<SearchRepoResultModel?> { get }
 }
@@ -46,24 +45,6 @@ class HomeRepoViewModel: HomeRepoViewModelProtocol {
         let repoWs = RepoWs()
         repoWs.delegate = self
         repoWs.getRepo()
-    }
-    
-    func setCardRepoView() -> CardRepoView.Configuration {
-        return CardRepoView.Configuration(
-            titleAndBodyView: TitleAndBodyView.Configuration(
-                textTitle: "Nome Repositório",
-                textBody: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "),
-            numberForksView: NumbersView.Configuration(
-                icon: Images.Icons.ic_forks,
-                textNumber: "640"),
-            numberStarsView: NumbersView.Configuration(
-                icon: Images.Icons.ic_stars,
-                textNumber: "85"),
-            profileUserRepoView: ProfileUserRepoView.Configuration(
-                profileIcon: Images.Icons.ic_profile,
-                userNameText: "username",
-                nameText: "Nome Sobrenome")
-        )
     }
     
     func shouldDetailsRepo() {

@@ -49,7 +49,7 @@ extension NumbersView: CodeView {
         iconImageView.tintColor = .colorGold()
         numberLabel.font = UIFont.boldSystemFont(ofSize: 14)
         numberLabel.textColor = .colorGold()
-        numberLabel.numberOfLines = .zero
+        numberLabel.numberOfLines = 1
     }
 }
 

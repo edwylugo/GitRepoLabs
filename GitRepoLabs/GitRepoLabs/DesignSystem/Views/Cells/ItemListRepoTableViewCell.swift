@@ -39,11 +39,11 @@ extension ItemListRepoTableViewCell: CodeView {
     func setupConstraints() {
         cardRepoView.anchor(top: contentView.topAnchor, paddingTop: 8,
                             leading: contentView.leadingAnchor, paddingLeft: 16,
-                            bottom: separatorView.topAnchor, paddingBottom: 8,
+                            bottom: separatorView.topAnchor, paddingBottom: 16,
                             trailing: contentView.trailingAnchor, paddingRight: 16)
         
         separatorView.anchor(leading: contentView.leadingAnchor, paddingLeft: 16,
-                             bottom: contentView.bottomAnchor,
+                             bottom: contentView.bottomAnchor, paddingBottom: 8,
                              trailing: contentView.trailingAnchor)
     }
     

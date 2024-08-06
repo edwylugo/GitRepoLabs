@@ -15,7 +15,7 @@ struct RepositoryModel: Codable {
     let isPrivate: Bool
     let owner: Owner
     let htmlURL: String
-    let description: String?
+    let `description`:  String?
     let fork: Bool
     let url: String
     let forksURL: String

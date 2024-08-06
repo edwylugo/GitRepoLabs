@@ -29,7 +29,7 @@ class CardRepoView: UIView {
     private let stackNumbers = UIStackView(translateMask: false).apply {
         $0.axis = .horizontal
         $0.spacing = 16
-        $0.distribution = .fillProportionally
+        $0.distribution = .fill
     }
     private let numberForksView = NumbersView(translateMask: false)
     private let numberStarsView = NumbersView(translateMask: false)
@@ -73,9 +73,7 @@ extension CardRepoView: CodeView {
         
         containerProfile.setWidth(width: 100)
         profileUserRepoView.centerX(inView: containerProfile)
-        profileUserRepoView.anchor(top: containerProfile.topAnchor,
-                                   leading: containerProfile.leadingAnchor,
-                                   trailing: containerProfile.trailingAnchor)
+        profileUserRepoView.centerY(inView: containerProfile)
     }
 }
 

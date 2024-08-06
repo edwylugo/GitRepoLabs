@@ -52,7 +52,11 @@ class HomeRepoController: UIViewController {
     }
     
     func setupBindigs() {
-        listRepoTableView.reloadData()
+        viewModel.searchRepoResult.bind { listRepo in
+            if listRepo != nil {
+                self.listRepoTableView.reloadData()
+            }
+        }
     }
     
 }
@@ -78,13 +82,35 @@ extension HomeRepoController: CodeView {
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension HomeRepoController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        guard let items = viewModel.searchRepoResult.value?.items.count else { return 0 }
+        return items
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(cellClass: ItemListRepoTableViewCell.self, indexPath: indexPath)
-        cell.configure(content: ItemListRepoTableViewCell.Configuration(cardRepoView: viewModel.setCardRepoView()))
+        
+        if let data = viewModel.searchRepoResult.value?.items[indexPath.row] {
+            cell.configure(content: ItemListRepoTableViewCell.Configuration(cardRepoView: CardRepoView.Configuration(
+                titleAndBodyView: TitleAndBodyView.Configuration(
+                    textTitle: data.name,
+                    textBody: data.description ?? ""),
+                numberForksView: NumbersView.Configuration(
+                    icon: Images.Icons.ic_forks,
+                    textNumber: data.forksCount.description),
+                numberStarsView: NumbersView.Configuration(
+                    icon: Images.Icons.ic_stars,
+                    textNumber: data.stargazersCount.description),
+                profileUserRepoView: ProfileUserRepoView.Configuration(
+                    profileIcon: Images.Icons.ic_profile,
+                    userNameText: data.owner.login,
+                    nameText: "Nome Sobrenome")
+            )))
+        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
