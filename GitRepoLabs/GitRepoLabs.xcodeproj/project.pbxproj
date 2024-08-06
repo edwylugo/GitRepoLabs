@@ -61,6 +61,7 @@
 		59F361682C61BC94001E6FF5 /* LinksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361672C61BC94001E6FF5 /* LinksModel.swift */; };
 		59F3616A2C61BCEC001E6FF5 /* LinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361692C61BCEC001E6FF5 /* LinkModel.swift */; };
 		59F3616E2C61C93B001E6FF5 /* LicenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F3616D2C61C93B001E6FF5 /* LicenseModel.swift */; };
+		59F361752C61CAA1001E6FF5 /* environment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59F361742C61CAA1001E6FF5 /* environment.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +140,7 @@
 		59F361672C61BC94001E6FF5 /* LinksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksModel.swift; sourceTree = "<group>"; };
 		59F361692C61BCEC001E6FF5 /* LinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkModel.swift; sourceTree = "<group>"; };
 		59F3616D2C61C93B001E6FF5 /* LicenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseModel.swift; sourceTree = "<group>"; };
+		59F361742C61CAA1001E6FF5 /* environment.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = environment.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 		59F360B92C5F009E001E6FF5 /* GitRepoLabs */ = {
 			isa = PBXGroup;
 			children = (
+				59F3616F2C61CA65001E6FF5 /* Environment */,
 				59F360F02C5F01B0001E6FF5 /* DesignSystem */,
 				59F360EB2C5F0192001E6FF5 /* Coordinator */,
 				59F360ED2C5F0199001E6FF5 /* Delegates */,
@@ -502,6 +505,22 @@
 			path = ListPullRequestsRepo;
 			sourceTree = "<group>";
 		};
+		59F3616F2C61CA65001E6FF5 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				59F361712C61CA72001E6FF5 /* Dev */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		59F361712C61CA72001E6FF5 /* Dev */ = {
+			isa = PBXGroup;
+			children = (
+				59F361742C61CAA1001E6FF5 /* environment.plist */,
+			);
+			path = Dev;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -608,6 +627,7 @@
 			files = (
 				59F360C72C5F00A0001E6FF5 /* LaunchScreen.storyboard in Resources */,
 				59F360C42C5F00A0001E6FF5 /* Assets.xcassets in Resources */,
+				59F361752C61CAA1001E6FF5 /* environment.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
