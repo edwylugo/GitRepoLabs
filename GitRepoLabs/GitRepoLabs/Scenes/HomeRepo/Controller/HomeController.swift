@@ -66,6 +66,7 @@ class HomeRepoController: UIViewController {
             }
         }
     }
+    
 }
 
 // MARK: - CodeView
@@ -95,7 +96,24 @@ extension HomeRepoController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(cellClass: ItemListRepoTableViewCell.self, indexPath: indexPath)
-        cell.configure(content: viewModel.setItemListRepoTableViewCell(indexPath: indexPath))
+        
+        if let data = viewModel.searchRepoResult.value?.items?[indexPath.row] {
+            cell.configure(content: ItemListRepoTableViewCell.Configuration(cardRepoView: CardRepoView.Configuration(
+                titleAndBodyView: TitleAndBodyView.Configuration(
+                    textTitle: data.name,
+                    textBody: data.description ?? ""),
+                numberForksView: NumbersView.Configuration(
+                    icon: Images.Icons.ic_forks,
+                    textNumber: data.forksCount?.description ?? "0"),
+                numberStarsView: NumbersView.Configuration(
+                    icon: Images.Icons.ic_stars,
+                    textNumber: data.stargazersCount?.description ?? "0"),
+                profileUserRepoView: ProfileUserRepoView.Configuration(
+                    userNameText: data.owner.login,
+                    nameText: "",
+                    avatarURL: URL(string: data.owner.avatarURL ?? ""))
+            )))
+        }
         return cell
     }
     
@@ -104,6 +122,8 @@ extension HomeRepoController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.shouldDetailsRepo(indexPath: indexPath)
+        if let data = viewModel.searchRepoResult.value?.items?[indexPath.row] {
+            viewModel.shouldDetailsRepo(repository: data)
+        }
     }
 }
