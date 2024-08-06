@@ -12,7 +12,7 @@ protocol HomeRepoCoordinatorProtocol: Coordinator {
 }
 
 class HomeRepoCoordinator: HomeRepoCoordinatorProtocol {
-
+    
     var finishDelegate: CoordinatorFinishDelegate? = nil
     
     var navigationController: UINavigationController

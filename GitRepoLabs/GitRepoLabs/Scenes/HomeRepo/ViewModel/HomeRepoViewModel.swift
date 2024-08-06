@@ -21,6 +21,9 @@ protocol HomeRepoViewModelProtocol: ViewModelProtocol {
     var searchRepoResult: Observable<SearchRepoResultModel?> { get }
     func setItemListRepoTableViewCell(indexPath: IndexPath) -> ItemListRepoTableViewCell.Configuration
     func shouldDetailsRepo(indexPath: IndexPath)
+    func getListRepo(page: Int)
+    func loadMoreRepo()
+    var hasMoreData: Bool { get }
 }
 
 // MARK: - HomeRepoViewModelProtocol
@@ -30,6 +33,8 @@ class HomeRepoViewModel: HomeRepoViewModelProtocol {
     var isError: Observable<String?>
     var isPullRefresh: Observable<Bool>
     var searchRepoResult: Observable<SearchRepoResultModel?>
+    var currentPage = 1
+    var hasMoreData = true
     
     // MARK: - Initialization
     init(navigationDelegate: HomeRepoNavigationProtocol) {
@@ -38,14 +43,20 @@ class HomeRepoViewModel: HomeRepoViewModelProtocol {
         self.isPullRefresh = Observable(false)
         self.isError = Observable("")
         self.searchRepoResult = Observable(nil)
-        self.getListRepo()
+        self.getListRepo(page: currentPage)
     }
     
-    func getListRepo() {
+    func getListRepo(page: Int) {
         loadingControl(true)
         let repoWs = RepoWs()
         repoWs.delegate = self
-        repoWs.getRepo()
+        repoWs.getRepo(page: page)
+    }
+    
+    func loadMoreRepo() {
+        guard !isLoading.value && hasMoreData else { return }
+        currentPage += 1
+        getListRepo(page: currentPage)
     }
     
     func shouldDetailsRepo(indexPath: IndexPath) {
@@ -89,7 +100,16 @@ extension HomeRepoViewModel: WsDelegate {
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: senderDict, options: [])
                 let searchRepoResultJson = try JSONDecoder().decode(SearchRepoResultModel.self, from: jsonData)
-                self.searchRepoResult.value = searchRepoResultJson
+                if let newItems = searchRepoResultJson.items, !newItems.isEmpty {
+                    if var currentResult = self.searchRepoResult.value {
+                        currentResult.items?.append(contentsOf: newItems)
+                        self.searchRepoResult.value = currentResult
+                    } else {
+                        self.searchRepoResult.value = searchRepoResultJson
+                    }
+                } else {
+                    self.hasMoreData = false
+                }
             } catch {
                 print("Erro ao converter JSON ou decodificar: \(error)")
             }
@@ -98,5 +118,6 @@ extension HomeRepoViewModel: WsDelegate {
     
     func wsFinishedWithError(identifier: Identifiers, sender: NSDictionary, error: String, status: WsStatus, code: Int) {
         loadingControl(false)
+        self.hasMoreData = false
     }
 }

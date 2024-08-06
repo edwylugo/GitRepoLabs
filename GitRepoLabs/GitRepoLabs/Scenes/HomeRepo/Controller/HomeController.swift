@@ -91,10 +91,16 @@ extension HomeRepoController: CodeView {
 extension HomeRepoController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let items = viewModel.searchRepoResult.value?.items?.count else { return 0 }
-        return items
+        return items + (viewModel.hasMoreData ? 1 : 0)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let itemsCount = viewModel.searchRepoResult.value?.items?.count ?? 0
+        if indexPath.row == itemsCount {
+            let cell = tableView.dequeue(cellClass: ItemListRepoTableViewCell.self, indexPath: indexPath)
+            return cell
+        }
+        
         let cell = tableView.dequeue(cellClass: ItemListRepoTableViewCell.self, indexPath: indexPath)
         cell.configure(content: viewModel.setItemListRepoTableViewCell(indexPath: indexPath))
         return cell
@@ -105,6 +111,19 @@ extension HomeRepoController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.shouldDetailsRepo(indexPath: indexPath)
+        let itemsCount = viewModel.searchRepoResult.value?.items?.count ?? 0
+        if indexPath.row < itemsCount {
+            viewModel.shouldDetailsRepo(indexPath: indexPath)
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.size.height
+        
+        if offsetY > contentHeight - height {
+            viewModel.loadMoreRepo()
+        }
     }
 }

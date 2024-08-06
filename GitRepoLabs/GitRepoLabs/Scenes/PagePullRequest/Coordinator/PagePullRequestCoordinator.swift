@@ -12,7 +12,7 @@ protocol PagePullRequestCoordinatorProtocol: Coordinator {
 }
 
 class PagePullRequestCoordinator: PagePullRequestCoordinatorProtocol {
-
+    
     var finishDelegate: CoordinatorFinishDelegate? = nil
     
     var navigationController: UINavigationController

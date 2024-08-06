@@ -11,7 +11,7 @@ import WebKit
 
 // MARK: - PagePullRequestNavigationProtocol - Use in Coordinator
 protocol PagePullRequestNavigationProtocol: AnyObject {
-
+    
 }
 
 // MARK: - ViewModelProtocol - Protocol definition Use in Controller
@@ -28,7 +28,7 @@ class PagePullRequestViewModel: PagePullRequestViewModelProtocol {
     var isLoading: Observable<Bool>
     var isError: Observable<String?>
     var urlString: String?
-
+    
     // MARK: - Initialization
     init(navigationDelegate: PagePullRequestNavigationProtocol, urlString: String) {
         self.navigationDelegate = navigationDelegate

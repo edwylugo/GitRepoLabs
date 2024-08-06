@@ -29,7 +29,7 @@ class DetailsRepoViewModel: DetailsRepoViewModelProtocol {
     var isLoading: Observable<Bool>
     var isError: Observable<String?>
     var pullRequestModel: Observable<[PullRequestModel]>
-
+    
     // MARK: - Initialization
     init(navigationDelegate: DetailsRepoNavigationProtocol, repository: RepositoryModel) {
         self.navigationDelegate = navigationDelegate
@@ -47,17 +47,17 @@ class DetailsRepoViewModel: DetailsRepoViewModelProtocol {
     }
     
     func setCardPullRequestView(indexPath: IndexPath) -> CardPullRequestView.Configuration {
-         let data = pullRequestModel.value[indexPath.row]
-         return CardPullRequestView.Configuration(
-             titleAndBodyView: TitleAndBodyView.Configuration(
-                 textTitle: data.title ?? "",
-                 textBody: data.body ?? ""),
-             profileUserPullRequestView: ProfileUserPullRequestView.Configuration(
-                 profileIcon: Images.Icons.ic_profile,
-                 userNameText: data.user?.login ?? "",
-                 nameText: data.user?.type ?? "")
-         )
-     }
+        let data = pullRequestModel.value[indexPath.row]
+        return CardPullRequestView.Configuration(
+            titleAndBodyView: TitleAndBodyView.Configuration(
+                textTitle: data.title ?? "",
+                textBody: data.body ?? ""),
+            profileUserPullRequestView: ProfileUserPullRequestView.Configuration(
+                profileIcon: Images.Icons.ic_profile,
+                userNameText: data.user?.login ?? "",
+                nameText: data.user?.type ?? "")
+        )
+    }
     
     func setHeaderPullsView() -> HeaderPullsView.Configuration {
         return HeaderPullsView.Configuration(
