@@ -35,6 +35,8 @@ class WebService: NSObject, URLSessionDelegate {
     
     override init() {
         super.init()
+        self.addHeader(name: "Authorization", value: "Bearer \(API.tokenGit())")
+        self.addHeader(name: "Cache-Control", value: "private, no-cache, no-store")
     }
     
     private func request(httpMethod: String, url: String) {
@@ -248,5 +250,21 @@ extension WebService {
         case .conflict: return 409
         case .undefined: return 99
         }
+    }
+}
+
+extension WebService {
+    func addParam(name: String, value: String) {
+        params.append(name)
+        values.append(value)
+    }
+    func addData(name: String, data: NSData, format: String) {
+        self.data.append(name)
+        dataValue.append(data)
+        dataFormat.append(format)
+    }
+    func addHeader(name: String, value: String) {
+        self.header.append(name)
+        self.headerValue.append(value)
     }
 }

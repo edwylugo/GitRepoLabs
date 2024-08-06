@@ -24,6 +24,10 @@ protocol PagePullRequestViewModelProtocol: ViewModelProtocol {
 
 // MARK: - PagePullRequestViewModelProtocol
 class PagePullRequestViewModel: PagePullRequestViewModelProtocol {
+    func loadingControl(_ isHidden: Bool) {
+        
+    }
+    
     private var navigationDelegate: PagePullRequestNavigationProtocol
     var isLoading: Observable<Bool>
     var isError: Observable<String?>

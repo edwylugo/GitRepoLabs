@@ -51,6 +51,16 @@
 		59F361502C619AF8001E6FF5 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F3614F2C619AF8001E6FF5 /* WebService.swift */; };
 		59F361522C619BAC001E6FF5 /* URLBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361512C619BAC001E6FF5 /* URLBase.swift */; };
 		59F361552C619E56001E6FF5 /* RepoWs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361542C619E56001E6FF5 /* RepoWs.swift */; };
+		59F361582C61B54B001E6FF5 /* SearchRepoResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361572C61B54B001E6FF5 /* SearchRepoResultModel.swift */; };
+		59F3615A2C61B570001E6FF5 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361592C61B570001E6FF5 /* RepositoryModel.swift */; };
+		59F3615E2C61B5C9001E6FF5 /* OwnerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F3615D2C61B5C9001E6FF5 /* OwnerModel.swift */; };
+		59F361602C61BAC9001E6FF5 /* PullRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F3615F2C61BAC9001E6FF5 /* PullRequestModel.swift */; };
+		59F361622C61BB3E001E6FF5 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361612C61BB3E001E6FF5 /* UserModel.swift */; };
+		59F361642C61BB8F001E6FF5 /* HeadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361632C61BB8F001E6FF5 /* HeadModel.swift */; };
+		59F361662C61BC33001E6FF5 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361652C61BC33001E6FF5 /* BaseModel.swift */; };
+		59F361682C61BC94001E6FF5 /* LinksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361672C61BC94001E6FF5 /* LinksModel.swift */; };
+		59F3616A2C61BCEC001E6FF5 /* LinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F361692C61BCEC001E6FF5 /* LinkModel.swift */; };
+		59F3616E2C61C93B001E6FF5 /* LicenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F3616D2C61C93B001E6FF5 /* LicenseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +129,16 @@
 		59F3614F2C619AF8001E6FF5 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		59F361512C619BAC001E6FF5 /* URLBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLBase.swift; sourceTree = "<group>"; };
 		59F361542C619E56001E6FF5 /* RepoWs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoWs.swift; sourceTree = "<group>"; };
+		59F361572C61B54B001E6FF5 /* SearchRepoResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepoResultModel.swift; sourceTree = "<group>"; };
+		59F361592C61B570001E6FF5 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
+		59F3615D2C61B5C9001E6FF5 /* OwnerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerModel.swift; sourceTree = "<group>"; };
+		59F3615F2C61BAC9001E6FF5 /* PullRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullRequestModel.swift; sourceTree = "<group>"; };
+		59F361612C61BB3E001E6FF5 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		59F361632C61BB8F001E6FF5 /* HeadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadModel.swift; sourceTree = "<group>"; };
+		59F361652C61BC33001E6FF5 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		59F361672C61BC94001E6FF5 /* LinksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksModel.swift; sourceTree = "<group>"; };
+		59F361692C61BCEC001E6FF5 /* LinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkModel.swift; sourceTree = "<group>"; };
+		59F3616D2C61C93B001E6FF5 /* LicenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -417,6 +437,7 @@
 				59F360EF2C5F01A8001E6FF5 /* API */,
 				59F361472C618A8A001E6FF5 /* Network */,
 				59F361482C618A8D001E6FF5 /* Services */,
+				59F361562C61B403001E6FF5 /* Models */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -446,6 +467,39 @@
 				59F361542C619E56001E6FF5 /* RepoWs.swift */,
 			);
 			path = Ws;
+			sourceTree = "<group>";
+		};
+		59F361562C61B403001E6FF5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				59F3615B2C61B5A7001E6FF5 /* ListRepo */,
+				59F3615C2C61B5B1001E6FF5 /* ListPullRequestsRepo */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		59F3615B2C61B5A7001E6FF5 /* ListRepo */ = {
+			isa = PBXGroup;
+			children = (
+				59F361572C61B54B001E6FF5 /* SearchRepoResultModel.swift */,
+				59F361592C61B570001E6FF5 /* RepositoryModel.swift */,
+				59F3615D2C61B5C9001E6FF5 /* OwnerModel.swift */,
+				59F3616D2C61C93B001E6FF5 /* LicenseModel.swift */,
+			);
+			path = ListRepo;
+			sourceTree = "<group>";
+		};
+		59F3615C2C61B5B1001E6FF5 /* ListPullRequestsRepo */ = {
+			isa = PBXGroup;
+			children = (
+				59F3615F2C61BAC9001E6FF5 /* PullRequestModel.swift */,
+				59F361612C61BB3E001E6FF5 /* UserModel.swift */,
+				59F361632C61BB8F001E6FF5 /* HeadModel.swift */,
+				59F361652C61BC33001E6FF5 /* BaseModel.swift */,
+				59F361672C61BC94001E6FF5 /* LinksModel.swift */,
+				59F361692C61BCEC001E6FF5 /* LinkModel.swift */,
+			);
+			path = ListPullRequestsRepo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -587,23 +641,31 @@
 				59F361052C5F0968001E6FF5 /* DetailsRepoCoordinator.swift in Sources */,
 				59F3612D2C5F33CC001E6FF5 /* ProfileUserRepoView.swift in Sources */,
 				59F3614C2C6199AF001E6FF5 /* Methods.swift in Sources */,
+				59F3616A2C61BCEC001E6FF5 /* LinkModel.swift in Sources */,
 				59F361432C615A92001E6FF5 /* PagePullRequestViewModel.swift in Sources */,
+				59F361622C61BB3E001E6FF5 /* UserModel.swift in Sources */,
 				59F3613B2C61537F001E6FF5 /* LineView.swift in Sources */,
 				59F361392C614D49001E6FF5 /* ProfileUserPullRequestView.swift in Sources */,
 				59F3612F2C60FB3E001E6FF5 /* HeaderView.swift in Sources */,
 				59F3610F2C5F0AFC001E6FF5 /* Configurable.swift in Sources */,
+				59F3615A2C61B570001E6FF5 /* RepositoryModel.swift in Sources */,
+				59F3615E2C61B5C9001E6FF5 /* OwnerModel.swift in Sources */,
 				59F361112C5F0BEC001E6FF5 /* UIViewExtension.swift in Sources */,
 				59F361372C6146B1001E6FF5 /* CardPullRequestView.swift in Sources */,
 				59F3611C2C5F1C91001E6FF5 /* UITableViewExtension.swift in Sources */,
 				59F361092C5F0979001E6FF5 /* DetailsRepoController.swift in Sources */,
 				59F361552C619E56001E6FF5 /* RepoWs.swift in Sources */,
 				59F361332C613F45001E6FF5 /* UILabelExtension.swift in Sources */,
+				59F361582C61B54B001E6FF5 /* SearchRepoResultModel.swift in Sources */,
+				59F361642C61BB8F001E6FF5 /* HeadModel.swift in Sources */,
+				59F3616E2C61C93B001E6FF5 /* LicenseModel.swift in Sources */,
 				59F361132C5F0C7F001E6FF5 /* UIStackViewExtension.swift in Sources */,
 				59F3610B2C5F09FC001E6FF5 /* Apply.swift in Sources */,
 				59F361412C615A2C001E6FF5 /* PagePullRequestCoordinator.swift in Sources */,
 				59F3614E2C619A6D001E6FF5 /* Identifiers.swift in Sources */,
 				59F361502C619AF8001E6FF5 /* WebService.swift in Sources */,
 				59F361152C5F0F3B001E6FF5 /* Observable.swift in Sources */,
+				59F361602C61BAC9001E6FF5 /* PullRequestModel.swift in Sources */,
 				59F361172C5F0F5E001E6FF5 /* ViewModelProtocol.swift in Sources */,
 				59F361452C615A9A001E6FF5 /* PagePullRequestController.swift in Sources */,
 				59F361212C5F2266001E6FF5 /* CardRepoView.swift in Sources */,
@@ -613,9 +675,11 @@
 				59F361072C5F0970001E6FF5 /* DetailsRepoViewModel.swift in Sources */,
 				59F3611F2C5F1E45001E6FF5 /* ItemListRepoTableViewCell.swift in Sources */,
 				59F361262C5F2884001E6FF5 /* NumbersView.swift in Sources */,
+				59F361682C61BC94001E6FF5 /* LinksModel.swift in Sources */,
 				59F361282C5F2D38001E6FF5 /* UIColorExtension.swift in Sources */,
 				59F3614A2C618E64001E6FF5 /* WsStatus.swift in Sources */,
 				59F360F32C5F03B8001E6FF5 /* CoordinatorProtocol.swift in Sources */,
+				59F361662C61BC33001E6FF5 /* BaseModel.swift in Sources */,
 				59F360FD2C5F08A4001E6FF5 /* HomeRepoCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

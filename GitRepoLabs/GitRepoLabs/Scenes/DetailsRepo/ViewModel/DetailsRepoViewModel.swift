@@ -24,6 +24,10 @@ protocol DetailsRepoViewModelProtocol: ViewModelProtocol {
 
 // MARK: - DetailsRepoViewModelProtocol
 class DetailsRepoViewModel: DetailsRepoViewModelProtocol {
+    func loadingControl(_ isHidden: Bool) {
+        
+    }
+    
     private var navigationDelegate: DetailsRepoNavigationProtocol
     var isLoading: Observable<Bool>
     var isError: Observable<String?>

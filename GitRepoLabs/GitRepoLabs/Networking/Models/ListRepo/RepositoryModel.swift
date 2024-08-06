@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Repository: Codable {
+struct RepositoryModel: Codable {
     let id: Int
     let nodeID: String
     let name: String
@@ -77,7 +77,7 @@ struct Repository: Codable {
     let archived: Bool
     let disabled: Bool
     let openIssuesCount: Int
-    let license: String?
+    let license: LicenseModel?
     let allowForking: Bool
     let isTemplate: Bool
     let webCommitSignoffRequired: Bool

@@ -10,4 +10,5 @@ import Foundation
 protocol ViewModelProtocol: AnyObject {
     var isLoading: Observable<Bool> { get }
     var isError: Observable<String?> { get }
+    func loadingControl(_ isHidden: Bool)
 }

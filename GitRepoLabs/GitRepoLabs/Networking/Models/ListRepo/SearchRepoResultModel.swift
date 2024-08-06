@@ -10,7 +10,7 @@ import Foundation
 struct SearchRepoResultModel: Codable {
     let totalCount: Int
     let incompleteResults: Bool
-    let items: [Repository]
+    let items: [RepositoryModel]
     
     enum CodingKeys: String, CodingKey {
         case totalCount = "total_count"
