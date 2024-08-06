@@ -104,7 +104,7 @@ extension DetailsRepoController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeue(cellClass: ItemPullRequestTableViewCell.self, indexPath: indexPath)
         cell.configure(
             content: ItemPullRequestTableViewCell.Configuration(
-                cardPullRequestView: viewModel.setCardPullRequestView()
+                cardPullRequestView: viewModel.setCardPullRequestView(indexPath: indexPath)
             )
         )
         return cell

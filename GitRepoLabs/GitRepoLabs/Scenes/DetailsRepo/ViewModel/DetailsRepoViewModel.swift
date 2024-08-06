@@ -17,7 +17,7 @@ protocol DetailsRepoNavigationProtocol: AnyObject {
 protocol DetailsRepoViewModelProtocol: ViewModelProtocol {
     var isLoading: Observable<Bool> { get }
     var isError: Observable<String?> { get }
-    func setCardPullRequestView() -> CardPullRequestView.Configuration
+    func setCardPullRequestView(indexPath: IndexPath) -> CardPullRequestView.Configuration
     func setHeaderPullsView() -> HeaderPullsView.Configuration
     func shouldPageRequestPull()
     var pullRequestModel: Observable<[PullRequestModel]> { get }
@@ -46,15 +46,16 @@ class DetailsRepoViewModel: DetailsRepoViewModelProtocol {
         repoWs.getPullRequestsRepo(criador: criador, repo: repo)
     }
     
-    func setCardPullRequestView() -> CardPullRequestView.Configuration {
+    func setCardPullRequestView(indexPath: IndexPath) -> CardPullRequestView.Configuration {
+        let data = pullRequestModel.value[indexPath.row]
         return CardPullRequestView.Configuration(
             titleAndBodyView: TitleAndBodyView.Configuration(
-                textTitle: "Título do pull request",
-                textBody: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "),
+                textTitle: data.title ?? "",
+                textBody: data.body ?? ""),
             profileUserPullRequestView: ProfileUserPullRequestView.Configuration(
                 profileIcon: Images.Icons.ic_profile,
-                userNameText: "username",
-                nameText: "Nome Sobrenome")
+                userNameText: data.user?.login ?? "",
+                nameText: data.user?.type ?? "")
         )
     }
     
