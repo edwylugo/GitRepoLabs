@@ -15,9 +15,9 @@ class RepoWs: WebService {
     
     // MARK: - Lista de repositórios
     // get -> https://api.github.com/search/repositories?q=language:Swift&sort=stars&page=1
-    func getRepo(page: Int = 1) {
+    func getRepo(q: String = "language:Swift", sort: String = "stars", page: Int = 1) {
         super.identifier = .listRepo
-        super.get(url: "\(API.baseURL())search/repositories?q=language:Swift&sort=stars&page=\(page)")
+        super.get(url: "\(API.baseURL())search/repositories?q=\(q)&sort=\(sort)&page=\(page)")
     }
     
     // MARK: - Pull Requests de um repositório
