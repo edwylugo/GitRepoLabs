@@ -104,14 +104,14 @@ extension DetailsRepoController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeue(cellClass: ItemPullRequestTableViewCell.self, indexPath: indexPath)
         cell.configure(
             content: ItemPullRequestTableViewCell.Configuration(
-                cardPullRequestView: viewModel.setCardPullRequestView()
+                cardPullRequestView: viewModel.setCardPullRequestView(indexPath: indexPath)
             )
         )
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.shouldPageRequestPull()
+        viewModel.shouldPageRequestPull(indexPath: indexPath)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

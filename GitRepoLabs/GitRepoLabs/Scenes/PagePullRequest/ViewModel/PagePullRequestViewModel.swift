@@ -24,21 +24,17 @@ protocol PagePullRequestViewModelProtocol: ViewModelProtocol {
 
 // MARK: - PagePullRequestViewModelProtocol
 class PagePullRequestViewModel: PagePullRequestViewModelProtocol {
-    func loadingControl(_ isHidden: Bool) {
-        
-    }
-    
     private var navigationDelegate: PagePullRequestNavigationProtocol
     var isLoading: Observable<Bool>
     var isError: Observable<String?>
     var urlString: String?
 
     // MARK: - Initialization
-    init(navigationDelegate: PagePullRequestNavigationProtocol) {
+    init(navigationDelegate: PagePullRequestNavigationProtocol, urlString: String) {
         self.navigationDelegate = navigationDelegate
         self.isLoading = Observable(false)
         self.isError = Observable("")
-        self.urlString = "https://github.com/"
+        self.urlString = urlString
     }
     
     func getWKWebViewConfiguration() -> WKWebViewConfiguration {
@@ -55,5 +51,9 @@ class PagePullRequestViewModel: PagePullRequestViewModelProtocol {
         configuration.processPool = processPool
         configuration.websiteDataStore = dataStore
         return configuration
+    }
+    
+    func loadingControl(_ isHidden: Bool) {
+        self.isLoading.value = isHidden
     }
 }

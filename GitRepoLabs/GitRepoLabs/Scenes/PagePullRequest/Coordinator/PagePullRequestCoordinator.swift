@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PagePullRequestCoordinatorProtocol: Coordinator {
-    func scenePagePullRequest()
+    func scenePagePullRequest(urlString: String)
 }
 
 class PagePullRequestCoordinator: PagePullRequestCoordinatorProtocol {
@@ -22,15 +22,15 @@ class PagePullRequestCoordinator: PagePullRequestCoordinatorProtocol {
     var type: CoordinatorType { .pagePulRequest }
     
     func start() {
-        scenePagePullRequest()
+        
     }
     
     required init(_ navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
-    func scenePagePullRequest() {
-        let viewModel = PagePullRequestViewModel(navigationDelegate: self)
+    func scenePagePullRequest(urlString: String) {
+        let viewModel = PagePullRequestViewModel(navigationDelegate: self, urlString: urlString)
         let controller = PagePullRequestController(viewModel: viewModel)
         navigationController.present(controller, animated: true)
     }
