@@ -10,7 +10,7 @@ import UIKit
 class HeaderPullsView: UIView {
     
     // MARK: - Properties
-    private let titleLabel = UILabel(translateMask: false).apply {
+    let titleLabel = UILabel(translateMask: false).apply {
         $0.font = UIFont.boldSystemFont(ofSize: 16)
         $0.textColor = .black
         $0.textAlignment = .left

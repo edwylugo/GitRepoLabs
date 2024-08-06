@@ -11,7 +11,7 @@ class CardPullRequestView: UIView {
     
     // MARK: - Properties
     
-    private let stackView = UIStackView(translateMask: false).apply {
+    let stackView = UIStackView(translateMask: false).apply {
         $0.axis = .vertical
         $0.distribution = .fill
         $0.alignment = .leading
